@@ -1,0 +1,6 @@
+framework module Pods_ThirdPartyMailerTests {
+  umbrella header "Pods-ThirdPartyMailerTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

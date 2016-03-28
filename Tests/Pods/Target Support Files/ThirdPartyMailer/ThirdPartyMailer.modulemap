@@ -1,0 +1,6 @@
+framework module ThirdPartyMailer {
+  umbrella header "ThirdPartyMailer-umbrella.h"
+
+  export *
+  module * { export * }
+}
