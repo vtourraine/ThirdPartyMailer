@@ -10,6 +10,19 @@
 	<string>46</string>
 	<key>objects</key>
 	<dict>
+		<key>00E33BD5299D2FA733DE05364DC7919C</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>ThirdPartyMailer.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
 		<key>01516965283433B399F12AAF20F4F202</key>
 		<dict>
 			<key>containerPortal</key>
@@ -22,6 +35,13 @@
 			<string>FEC876C3AFC7037BC3D9D7B546758081</string>
 			<key>remoteInfo</key>
 			<string>ThirdPartyMailer</string>
+		</dict>
+		<key>03AA7DD5DC2E6E09480B19E037BACED9</key>
+		<dict>
+			<key>fileRef</key>
+			<string>CB04A6511CEE9EB5D9C5A825AE1F59A0</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
 		</dict>
 		<key>09D30E7655DCD21B60138C7E5F73D450</key>
 		<dict>
@@ -36,13 +56,6 @@
 			<key>runOnlyForDeploymentPostprocessing</key>
 			<string>0</string>
 		</dict>
-		<key>0A81C3076C726A5A736C6F64ACF47457</key>
-		<dict>
-			<key>fileRef</key>
-			<string>19CFC66AFBA186B82AA527651464281A</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
 		<key>0DBB388900E248C1035A5BFBBEB6923B</key>
 		<dict>
 			<key>buildActionMask</key>
@@ -55,6 +68,13 @@
 			<string>PBXSourcesBuildPhase</string>
 			<key>runOnlyForDeploymentPostprocessing</key>
 			<string>0</string>
+		</dict>
+		<key>10CA892E33879919AB76B19DD27034EC</key>
+		<dict>
+			<key>fileRef</key>
+			<string>00E33BD5299D2FA733DE05364DC7919C</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
 		</dict>
 		<key>1112D35296F3EB1E769B2DBB4FDD4C16</key>
 		<dict>
@@ -107,27 +127,19 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>19CFC66AFBA186B82AA527651464281A</key>
+		<key>202B66BB029AB12446F5777022D0E4BF</key>
 		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
+			<key>children</key>
+			<array>
+				<string>F67DF686C4991CBCC41B047027055C3E</string>
+				<string>91852BF8BD95B7EF0C66E445B7869256</string>
+			</array>
 			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>ThirdPartyMailer</string>
 			<key>path</key>
-			<string>ThirdPartyMailer.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>1A883909269F5B7BA6D7BE8646489DCE</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>ThirdPartyMailer.modulemap</string>
+			<string>../..</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -255,6 +267,19 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
+		<key>305C72C84CCDDC8BE36C248B51FB382D</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
 		<key>33CB41DAA6AB7FC5F3C2B0FB89A01201</key>
 		<dict>
 			<key>includeInIndex</key>
@@ -285,7 +310,7 @@
 		<dict>
 			<key>children</key>
 			<array>
-				<string>9D56D8725B928E30CEFAABF42EE4432F</string>
+				<string>202B66BB029AB12446F5777022D0E4BF</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
@@ -370,13 +395,6 @@
 			<string>AC5B29173B83D381E20CF3AAAACFB1D3</string>
 			<key>productType</key>
 			<string>com.apple.product-type.framework</string>
-		</dict>
-		<key>50CC71A587F6855E38B91B1BC7888E32</key>
-		<dict>
-			<key>fileRef</key>
-			<string>934721CE05D1345F04D13194AC4FD003</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
 		</dict>
 		<key>52D09089CDEF3B92D7942C65E64F8F21</key>
 		<dict>
@@ -597,6 +615,21 @@
 				</array>
 			</dict>
 		</dict>
+		<key>6CBD7375FF1C79ED6CDF2F800F1D30BC</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>9F4F81D4C17FFC9E5B43E30285515570</string>
+				<string>03AA7DD5DC2E6E09480B19E037BACED9</string>
+				<string>10CA892E33879919AB76B19DD27034EC</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
 		<key>6E7E5AF37923BFA48D6994B9BFC6535F</key>
 		<dict>
 			<key>isa</key>
@@ -613,7 +646,7 @@
 		<key>747C1DB6CA8ECB4D43F8033D7610D560</key>
 		<dict>
 			<key>baseConfigurationReference</key>
-			<string>9D8306581CF4539494910DB29B618B9D</string>
+			<string>EBFCE3A4EAABA89C729E114AB102FA03</string>
 			<key>buildSettings</key>
 			<dict>
 				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
@@ -678,19 +711,6 @@
 			<string>text.xcconfig</string>
 			<key>path</key>
 			<string>Pods-ThirdPartyMailerExample.debug.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>79C402265B532908229FFB1165964ADE</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>ThirdPartyMailer-umbrella.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -778,6 +798,19 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
+		<key>7E6E3496B42FA1821AF8C8AAB0D5CF6B</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>ThirdPartyMailer-prefix.pch</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
 		<key>82E94A7C2FE19B3FC6985AC73E4C558E</key>
 		<dict>
 			<key>buildActionMask</key>
@@ -790,19 +823,6 @@
 			<string>PBXHeadersBuildPhase</string>
 			<key>runOnlyForDeploymentPostprocessing</key>
 			<string>0</string>
-		</dict>
-		<key>846556028E6253386808E0C39333EE6A</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>ThirdPartyMailer-prefix.pch</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
 		</dict>
 		<key>8472A8355BCF16F3EF62E20AE554BED7</key>
 		<dict>
@@ -831,38 +851,30 @@
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
-		<key>934721CE05D1345F04D13194AC4FD003</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>ThirdPartyMailer-dummy.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>9617488B47DE403F865A006E8C57BE11</key>
+		<key>91852BF8BD95B7EF0C66E445B7869256</key>
 		<dict>
 			<key>children</key>
 			<array>
-				<string>19CFC66AFBA186B82AA527651464281A</string>
+				<string>305C72C84CCDDC8BE36C248B51FB382D</string>
+				<string>A31DD3D440286E0FCA9904388FA8B834</string>
+				<string>EBFCE3A4EAABA89C729E114AB102FA03</string>
+				<string>CB04A6511CEE9EB5D9C5A825AE1F59A0</string>
+				<string>7E6E3496B42FA1821AF8C8AAB0D5CF6B</string>
+				<string>BD2F64EC6CB2BF7BEE7E53F8F51B9C5E</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
 			<key>name</key>
-			<string>Source</string>
+			<string>Support Files</string>
 			<key>path</key>
-			<string>Source</string>
+			<string>Tests/Pods/Target Support Files/ThirdPartyMailer</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
 		<key>9D0F61FFC1E6F30827E3E90C52BD1251</key>
 		<dict>
 			<key>baseConfigurationReference</key>
-			<string>9D8306581CF4539494910DB29B618B9D</string>
+			<string>EBFCE3A4EAABA89C729E114AB102FA03</string>
 			<key>buildSettings</key>
 			<dict>
 				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
@@ -915,35 +927,6 @@
 			<key>name</key>
 			<string>Release</string>
 		</dict>
-		<key>9D56D8725B928E30CEFAABF42EE4432F</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>9617488B47DE403F865A006E8C57BE11</string>
-				<string>AF554568E0D389083C9728C964B00658</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>ThirdPartyMailer</string>
-			<key>path</key>
-			<string>../..</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>9D8306581CF4539494910DB29B618B9D</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>path</key>
-			<string>ThirdPartyMailer.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
 		<key>9E5DA9EC4D120566B2A91C6247DC082D</key>
 		<dict>
 			<key>includeInIndex</key>
@@ -954,6 +937,24 @@
 			<string>text.xcconfig</string>
 			<key>path</key>
 			<string>Pods-ThirdPartyMailerExample.release.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9F4F81D4C17FFC9E5B43E30285515570</key>
+		<dict>
+			<key>fileRef</key>
+			<string>F3AD86E7A21A43CB5EFBD42A08FEE8C7</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>A31DD3D440286E0FCA9904388FA8B834</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>ThirdPartyMailer.modulemap</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -1000,26 +1001,6 @@
 			<key>sourceTree</key>
 			<string>BUILT_PRODUCTS_DIR</string>
 		</dict>
-		<key>AF554568E0D389083C9728C964B00658</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>D4D06ECC54AC943DE2D69356AF6F7408</string>
-				<string>1A883909269F5B7BA6D7BE8646489DCE</string>
-				<string>9D8306581CF4539494910DB29B618B9D</string>
-				<string>934721CE05D1345F04D13194AC4FD003</string>
-				<string>846556028E6253386808E0C39333EE6A</string>
-				<string>79C402265B532908229FFB1165964ADE</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Support Files</string>
-			<key>path</key>
-			<string>Tests/Pods/Target Support Files/ThirdPartyMailer</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
 		<key>AF7BBE9538E2172EEAC194E2F2DD5485</key>
 		<dict>
 			<key>buildActionMask</key>
@@ -1049,6 +1030,19 @@
 			<string>SOURCE_ROOT</string>
 			<key>xcLanguageSpecificationIdentifier</key>
 			<string>xcode.lang.ruby</string>
+		</dict>
+		<key>BD2F64EC6CB2BF7BEE7E53F8F51B9C5E</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>ThirdPartyMailer-umbrella.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
 		</dict>
 		<key>C1C21A1F940A0F374F445B4C77ACBE6B</key>
 		<dict>
@@ -1103,6 +1097,19 @@
 			<string>D60FAC9180F0B0DDF9B3E6FA1B3D7EFF</string>
 			<key>productType</key>
 			<string>com.apple.product-type.framework</string>
+		</dict>
+		<key>CB04A6511CEE9EB5D9C5A825AE1F59A0</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>ThirdPartyMailer-dummy.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
 		</dict>
 		<key>D19A02740D502DB7E9B0576C63A17E83</key>
 		<dict>
@@ -1272,19 +1279,6 @@
 			<key>name</key>
 			<string>Debug</string>
 		</dict>
-		<key>D4D06ECC54AC943DE2D69356AF6F7408</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
 		<key>D543A233EFA58F082C4AD9E3619BCED5</key>
 		<dict>
 			<key>includeInIndex</key>
@@ -1316,7 +1310,7 @@
 		<key>D87E1AA03E133729D8848E92318F54CE</key>
 		<dict>
 			<key>fileRef</key>
-			<string>79C402265B532908229FFB1165964ADE</string>
+			<string>BD2F64EC6CB2BF7BEE7E53F8F51B9C5E</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -1350,6 +1344,19 @@
 			<string>text</string>
 			<key>path</key>
 			<string>Pods-ThirdPartyMailerTests-acknowledgements.markdown</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>EBFCE3A4EAABA89C729E114AB102FA03</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>ThirdPartyMailer.xcconfig</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -1454,6 +1461,19 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
+		<key>F3AD86E7A21A43CB5EFBD42A08FEE8C7</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>ThirdPartyMailClient.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
 		<key>F4357CE59D2023093BA88381834D1445</key>
 		<dict>
 			<key>buildConfigurations</key>
@@ -1467,6 +1487,22 @@
 			<string>Release</string>
 			<key>isa</key>
 			<string>XCConfigurationList</string>
+		</dict>
+		<key>F67DF686C4991CBCC41B047027055C3E</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>F3AD86E7A21A43CB5EFBD42A08FEE8C7</string>
+				<string>00E33BD5299D2FA733DE05364DC7919C</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Source</string>
+			<key>path</key>
+			<string>Source</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
 		</dict>
 		<key>F9A6B5965987E23C3CA5B3C52A78A162</key>
 		<dict>
@@ -1523,27 +1559,13 @@
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
-		<key>FE94A1010506DF651699FD0934EF40B5</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>50CC71A587F6855E38B91B1BC7888E32</string>
-				<string>0A81C3076C726A5A736C6F64ACF47457</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
 		<key>FEC876C3AFC7037BC3D9D7B546758081</key>
 		<dict>
 			<key>buildConfigurationList</key>
 			<string>53B2B0EC52DE0BE6A5B8D151319957A0</string>
 			<key>buildPhases</key>
 			<array>
-				<string>FE94A1010506DF651699FD0934EF40B5</string>
+				<string>6CBD7375FF1C79ED6CDF2F800F1D30BC</string>
 				<string>C1C21A1F940A0F374F445B4C77ACBE6B</string>
 				<string>82E94A7C2FE19B3FC6985AC73E4C558E</string>
 			</array>

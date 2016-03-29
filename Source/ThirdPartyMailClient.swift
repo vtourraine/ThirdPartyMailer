@@ -1,5 +1,5 @@
 //
-// ThirdPartyMailer.swift
+// ThirdPartyMailClient.swift
 //
 // Copyright (c) 2016 Vincent Tourraine (http://www.vtourraine.net)
 //
@@ -21,20 +21,24 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-import UIKit
-
 /**
  
 */
-extension UIApplication {
-    func isMailClientAvailable(client: ThirdPartyMailClient) -> Bool {
-        guard let URL = NSURL(string: client.URLScheme)
-            else { return false }
+public struct ThirdPartyMailClient {
+    public let name: String
+    public let URLScheme: String
 
-        return self.canOpenURL(URL)
+    let URLRoot: String?
+    let URLRecipientKey: String?
+    let URLSubjectKey: String?
+    let URLBodyKey: String?
+
+    public static func clients() -> [ThirdPartyMailClient] {
+        return [ThirdPartyMailClient(name: "Sparrow", URLScheme: "sparrow", URLRoot: nil, URLRecipientKey: nil, URLSubjectKey: nil, URLBodyKey: nil)]
     }
 
-    func openMailClient(client: ThirdPartyMailClient, recipient: String?, subject: String?, body: String?) {
-        self.openURL(client.composeURL(recipient, subject: subject, body: body))
+    public func composeURL(recipient: String?, subject: String?, body: String?) -> NSURL {
+        return NSURL()
     }
 }
+

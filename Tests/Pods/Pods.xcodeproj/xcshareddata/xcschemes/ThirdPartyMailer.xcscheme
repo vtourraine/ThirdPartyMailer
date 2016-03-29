@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '53893F5A623688B98C5BD783'
+               BlueprintIdentifier = '1E2156A819B0466FB47C18ED'
                BlueprintName = 'ThirdPartyMailer'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'ThirdPartyMailer.framework'>
