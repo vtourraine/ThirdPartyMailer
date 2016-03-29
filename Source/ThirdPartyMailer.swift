@@ -26,15 +26,15 @@ import UIKit
 /**
  
 */
-extension UIApplication {
-    func isMailClientAvailable(client: ThirdPartyMailClient) -> Bool {
+public extension UIApplication {
+    public func isMailClientAvailable(client: ThirdPartyMailClient) -> Bool {
         guard let URL = NSURL(string: client.URLScheme)
             else { return false }
 
         return self.canOpenURL(URL)
     }
 
-    func openMailClient(client: ThirdPartyMailClient, recipient: String?, subject: String?, body: String?) {
+    public func openMailClient(client: ThirdPartyMailClient, recipient: String?, subject: String?, body: String?) {
         self.openURL(client.composeURL(recipient, subject: subject, body: body))
     }
 }

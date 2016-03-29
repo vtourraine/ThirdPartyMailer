@@ -7,19 +7,24 @@
 //
 
 import UIKit
+import ThirdPartyMailer
 
-class ViewController: UIViewController {
+class ViewController: UITableViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+    let clients = ThirdPartyMailClient.clients()
+    let application = UIApplication.sharedApplication()
+
+    // MARK: - Table view data source
+
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return clients.count
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
+        let client = clients[indexPath.row]
+        cell.textLabel?.text = client.name
+        application.isMailClientAvailable(client)
+        return cell
     }
-
-
 }
-
