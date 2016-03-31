@@ -12,7 +12,7 @@ import ThirdPartyMailer
 class ViewController: UITableViewController {
 
     let clients = ThirdPartyMailClient.clients()
-    let application = UIApplication.sharedApplication()
+
 
     // MARK: - Table view data source
 
@@ -24,7 +24,16 @@ class ViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
         let client = clients[indexPath.row]
         cell.textLabel?.text = client.name
-        application.isMailClientAvailable(client)
+
+        if UIApplication.sharedApplication().isMailClientAvailable(client) {
+            cell.detailTextLabel?.text = NSLocalizedString("Available", comment: "")
+            cell.detailTextLabel?.textColor = view.tintColor
+        }
+        else {
+            cell.detailTextLabel?.text = NSLocalizedString("Unvailable", comment: "")
+            cell.detailTextLabel?.textColor = UIColor.redColor()
+        }
+
         return cell
     }
 }

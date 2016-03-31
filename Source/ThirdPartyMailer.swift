@@ -24,11 +24,16 @@
 import UIKit
 
 /**
- 
+ `UIApplication` extension to test third party mail clients availability,
+ and open third party mail clients in compose mode.
 */
 public extension UIApplication {
+
     public func isMailClientAvailable(client: ThirdPartyMailClient) -> Bool {
-        guard let URL = NSURL(string: client.URLScheme)
+        let components = NSURLComponents()
+        components.scheme = client.URLScheme
+
+        guard let URL = components.URL
             else { return false }
 
         return self.canOpenURL(URL)

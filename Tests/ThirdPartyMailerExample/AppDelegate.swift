@@ -15,7 +15,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        print("[i] If you see `-canOpenURL: failed for URL:` errors, make sure to whitelist")
+        print("    the URL schemes in your app info plist (`LSApplicationQueriesSchemes`).")
+
         return true
     }
 
