@@ -1,5 +1,16 @@
 # ThirdPartyMailer
 
+Interact with third-party mail clients, using custom URL schemes.
+
+
+## Supported mail clients
+
+- Sparrow
+- Gmail
+- Dispatch
+- Spark
+- Airmail
+
 
 ## Requirements
 
