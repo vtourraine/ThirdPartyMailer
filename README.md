@@ -2,6 +2,8 @@
 
 Interact with third-party mail clients, using custom URL schemes.
 
+Tested on Travis CI: [![Build Status](https://travis-ci.org/vtourraine/ThirdPartyMailer.svg?branch=master)](https://travis-ci.org/vtourraine/ThirdPartyMailer)
+
 
 ## Supported mail clients
 
