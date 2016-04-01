@@ -34,7 +34,26 @@ public struct ThirdPartyMailClient {
     let URLBodyKey: String?
 
     public static func clients() -> [ThirdPartyMailClient] {
-        return [ThirdPartyMailClient(name: "Sparrow", URLScheme: "sparrow", URLRoot: nil, URLRecipientKey: nil, URLSubjectKey: "subject", URLBodyKey: "body")]
+        return [
+            // sparrow:[to]?subject=[subject]&body=[body]
+            ThirdPartyMailClient(name: "Sparrow", URLScheme: "sparrow",
+                URLRoot: nil, URLRecipientKey: nil, URLSubjectKey: "subject", URLBodyKey: "body"),
+
+            // googlegmail:///co?to=[to]&subject=[subject]&body=[body]
+            ThirdPartyMailClient(name: "Gmail", URLScheme: "googlegmail",
+                URLRoot: "///co", URLRecipientKey: "to", URLSubjectKey: "subject", URLBodyKey: "body"),
+
+            // x-dispatch:///compose?to=[to]&subject=[subject]&body=[body]
+            ThirdPartyMailClient(name: "Dispatch", URLScheme: "x-dispatch",
+                URLRoot: "///compose", URLRecipientKey: "to", URLSubjectKey: "subject", URLBodyKey: "body"),
+
+            // readdle-spark://compose?subject=[subject]&body=[body]&recipient=[recipient]
+            ThirdPartyMailClient(name: "Spark", URLScheme: "readdle-spark",
+                URLRoot: "//compose", URLRecipientKey: "recipient", URLSubjectKey: "subject", URLBodyKey: "body"),
+
+            // airmail://compose?subject=[subject]&from=[from]&to=[to]&cc=[cc]&bcc=[bcc]&plainBody=[plainBody]&htmlBody=[htmlBody]
+            ThirdPartyMailClient(name: "Airmail", URLScheme: "airmail",
+                URLRoot: "//compose", URLRecipientKey: "to", URLSubjectKey: "subject", URLBodyKey: "plainBody")]
     }
 
     public func composeURL(recipient: String?, subject: String?, body: String?) -> NSURL {
