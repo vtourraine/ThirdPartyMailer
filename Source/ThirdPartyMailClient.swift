@@ -34,11 +34,43 @@ public struct ThirdPartyMailClient {
     let URLBodyKey: String?
 
     public static func clients() -> [ThirdPartyMailClient] {
-        return [ThirdPartyMailClient(name: "Sparrow", URLScheme: "sparrow", URLRoot: nil, URLRecipientKey: nil, URLSubjectKey: nil, URLBodyKey: nil)]
+        return [ThirdPartyMailClient(name: "Sparrow", URLScheme: "sparrow", URLRoot: nil, URLRecipientKey: nil, URLSubjectKey: "subject", URLBodyKey: "body")]
     }
 
     public func composeURL(recipient: String?, subject: String?, body: String?) -> NSURL {
-        return NSURL()
+        var components = NSURLComponents(string: "\(URLScheme):\(URLRoot ?? "")")
+        components?.scheme = self.URLScheme
+
+        if URLRecipientKey == nil {
+            if let recipient = recipient {
+                components = NSURLComponents(string: "\(URLScheme):\(URLRoot ?? "")\(recipient)")
+            }
+        }
+
+        var queryItems: [NSURLQueryItem] = []
+
+        if let recipient = recipient, let URLRecipientKey = URLRecipientKey {
+            queryItems.append(NSURLQueryItem(name: URLRecipientKey, value:recipient))
+        }
+
+        if let subject = subject, let URLSubjectKey = URLSubjectKey {
+            queryItems.append(NSURLQueryItem(name: URLSubjectKey, value:subject))
+        }
+
+        if let body = body, let URLBodyKey = URLBodyKey {
+            queryItems.append(NSURLQueryItem(name: URLBodyKey, value:body))
+        }
+
+        if queryItems.isEmpty == false {
+            components?.queryItems = queryItems
+        }
+
+        if let URL = components?.URL {
+            return URL
+        }
+        else {
+            return NSURL()
+        }
     }
 }
 

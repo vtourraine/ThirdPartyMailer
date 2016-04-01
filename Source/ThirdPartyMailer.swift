@@ -27,19 +27,26 @@ import UIKit
  `UIApplication` extension to test third party mail clients availability,
  and open third party mail clients in compose mode.
 */
-public extension UIApplication {
+public class ThirdPartyMailer {
 
-    public func isMailClientAvailable(client: ThirdPartyMailClient) -> Bool {
+    public class func application(application: UIApplicationOpenURLProtocol, isMailClientAvailable client: ThirdPartyMailClient) -> Bool {
         let components = NSURLComponents()
         components.scheme = client.URLScheme
 
         guard let URL = components.URL
             else { return false }
 
-        return self.canOpenURL(URL)
+        return application.canOpenURL(URL)
     }
 
-    public func openMailClient(client: ThirdPartyMailClient, recipient: String?, subject: String?, body: String?) {
-        self.openURL(client.composeURL(recipient, subject: subject, body: body))
+    public class func application(application: UIApplicationOpenURLProtocol, openMailClient client: ThirdPartyMailClient, recipient: String?, subject: String?, body: String?) {
+        application.openURL(client.composeURL(recipient, subject: subject, body: body))
     }
 }
+
+public protocol UIApplicationOpenURLProtocol {
+    func canOpenURL(url: NSURL) -> Bool
+    func openURL(url: NSURL) -> Bool
+}
+
+extension UIApplication: UIApplicationOpenURLProtocol {}

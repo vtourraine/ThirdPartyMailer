@@ -25,7 +25,7 @@ class ViewController: UITableViewController {
         let client = clients[indexPath.row]
         cell.textLabel?.text = client.name
 
-        if UIApplication.sharedApplication().isMailClientAvailable(client) {
+        if ThirdPartyMailer.application(UIApplication.sharedApplication(), isMailClientAvailable: client) {
             cell.detailTextLabel?.text = NSLocalizedString("Available", comment: "")
             cell.detailTextLabel?.textColor = view.tintColor
         }
