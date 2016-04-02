@@ -7,11 +7,15 @@ Tested on Travis CI: [![Build Status](https://travis-ci.org/vtourraine/ThirdPart
 
 ## Supported mail clients
 
-- Sparrow
-- Gmail
-- Dispatch
-- Spark
-- Airmail
+Client   | URL Scheme      | App Store
+-------- | --------------- | ---------
+Sparrow  | `sparrow`       | _discontinued_
+Gmail    | `googlegmail`   | [link](https://itunes.apple.com/app/id422689480?mt=8)
+Dispatch | `x-dispatch`    | [link](https://itunes.apple.com/app/id642022747?mt=8)
+Spark    | `readdle-spark` | [link](https://itunes.apple.com/app/id997102246?mt=8)
+Airmail  | `airmail`       | [link](https://itunes.apple.com/app/id993160329?mt=8)
+
+Unfortunately, not all mail clients offer URL schemes to be supported by `ThirdPartyMailer`. If you’re aware of another candidate, please [let us know](https://github.com/vtourraine/ThirdPartyMailer/issues).
 
 
 ## Requirements
