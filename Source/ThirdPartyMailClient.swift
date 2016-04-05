@@ -97,22 +97,27 @@ public struct ThirdPartyMailClient {
             }
         }
 
-        var queryItems: [NSURLQueryItem] = []
+        if #available(iOS 8.0, *) {
+            var queryItems: [NSURLQueryItem] = []
 
-        if let recipient = recipient, let URLRecipientKey = URLRecipientKey {
-            queryItems.append(NSURLQueryItem(name: URLRecipientKey, value:recipient))
+            if let recipient = recipient, let URLRecipientKey = URLRecipientKey {
+                queryItems.append(NSURLQueryItem(name: URLRecipientKey, value:recipient))
+            }
+
+            if let subject = subject, let URLSubjectKey = URLSubjectKey {
+                queryItems.append(NSURLQueryItem(name: URLSubjectKey, value:subject))
+            }
+
+            if let body = body, let URLBodyKey = URLBodyKey {
+                queryItems.append(NSURLQueryItem(name: URLBodyKey, value:body))
+            }
+
+            if queryItems.isEmpty == false {
+                components?.queryItems = queryItems
+            }
         }
-
-        if let subject = subject, let URLSubjectKey = URLSubjectKey {
-            queryItems.append(NSURLQueryItem(name: URLSubjectKey, value:subject))
-        }
-
-        if let body = body, let URLBodyKey = URLBodyKey {
-            queryItems.append(NSURLQueryItem(name: URLBodyKey, value:body))
-        }
-
-        if queryItems.isEmpty == false {
-            components?.queryItems = queryItems
+        else {
+            // Fallback on earlier versions
         }
 
         if let URL = components?.URL {
