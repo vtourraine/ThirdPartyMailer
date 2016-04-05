@@ -20,13 +20,13 @@ Unfortunately, not all mail clients offer URL schemes to be supported by `ThirdP
 
 ## How to use
 
-### Getting the list of available clients
+Getting the list of available clients:
 
 ``` swift
 let clients = ThirdPartyMailClient.clients()
 ```
 
-### Testing the client availability (i.e. app installed)
+Testing the client availability (i.e. is the app installed):
 
 ``` swift
 let application = UIApplication.sharedApplication()
@@ -36,7 +36,7 @@ if ThirdPartyMailer.application(application, isMailClientAvailable: client) {
 }
 ```
 
-### Open the client
+Opening the client (with optional message recipient, subject, and body):
 
 ``` swift
 let application = UIApplication.sharedApplication()
