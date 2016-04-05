@@ -23,12 +23,17 @@
 
 import UIKit
 
-/**
- `UIApplication` extension to test third party mail clients availability,
- and open third party mail clients in compose mode.
-*/
+/// Tests third party mail clients availability, and opens third party mail clients in compose mode.
 public class ThirdPartyMailer {
 
+    /**
+     Tests the availability of a third-party mail client.
+
+     - Parameters application: The main application (usually `UIApplication.sharedApplication()`).
+     - Parameters client: The third-party client to test.
+
+     - Returns: `true` if the application can open the client; otherwise, `false`.
+     */
     public class func application(application: UIApplicationOpenURLProtocol, isMailClientAvailable client: ThirdPartyMailClient) -> Bool {
         let components = NSURLComponents()
         components.scheme = client.URLScheme
@@ -39,11 +44,23 @@ public class ThirdPartyMailer {
         return application.canOpenURL(URL)
     }
 
-    public class func application(application: UIApplicationOpenURLProtocol, openMailClient client: ThirdPartyMailClient, recipient: String?, subject: String?, body: String?) {
-        application.openURL(client.composeURL(recipient, subject: subject, body: body))
+    /**
+     Opens a third-party mail client in compose mode.
+
+     - Parameters application: The main application (usually `UIApplication.sharedApplication()`).
+     - Parameters client: The third-party client to test.
+     - Parameters recipient: The email address of the recipient (optional).
+     - Parameters subject: The email subject (optional).
+     - Parameters body: The email body (optional).
+
+     - Returns: `true` if the application opens the client; otherwise, `false`.
+     */
+    public class func application(application: UIApplicationOpenURLProtocol, openMailClient client: ThirdPartyMailClient, recipient: String?, subject: String?, body: String?) -> Bool {
+        return application.openURL(client.composeURL(recipient, subject: subject, body: body))
     }
 }
 
+/// Extension with URL-specific methods for `UIApplication`
 public protocol UIApplicationOpenURLProtocol {
     func canOpenURL(url: NSURL) -> Bool
     func openURL(url: NSURL) -> Bool
