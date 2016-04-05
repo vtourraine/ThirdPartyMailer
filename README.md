@@ -1,6 +1,6 @@
 # ThirdPartyMailer
 
-Interact with third-party mail clients, using custom URL schemes.
+_Interact with third-party iOS mail clients, using custom URL schemes._
 
 Tested on Travis CI: [![Build Status](https://travis-ci.org/vtourraine/ThirdPartyMailer.svg?branch=master)](https://travis-ci.org/vtourraine/ThirdPartyMailer)
 
@@ -16,6 +16,33 @@ Spark    | `readdle-spark` | [link](https://itunes.apple.com/app/id997102246?mt=
 Airmail  | `airmail`       | [link](https://itunes.apple.com/app/id993160329?mt=8)
 
 Unfortunately, not all mail clients offer URL schemes to be supported by `ThirdPartyMailer`. If you’re aware of another candidate, please [let us know](https://github.com/vtourraine/ThirdPartyMailer/issues).
+
+
+## How to use
+
+### Getting the list of available clients
+
+``` swift
+let clients = ThirdPartyMailClient.clients()
+```
+
+### Testing the client availability (i.e. app installed)
+
+``` swift
+let application = UIApplication.sharedApplication()
+
+if ThirdPartyMailer.application(application, isMailClientAvailable: client) {
+    // ...
+}
+```
+
+### Open the client
+
+``` swift
+let application = UIApplication.sharedApplication()
+
+ThirdPartyMailer.application(application, openMailClient: client, recipient: nil, subject: nil, body: nil)
+```
 
 
 ## Requirements
