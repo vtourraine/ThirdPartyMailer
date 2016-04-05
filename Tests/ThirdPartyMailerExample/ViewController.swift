@@ -23,9 +23,11 @@ class ViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
         let client = clients[indexPath.row]
+        let application = UIApplication.sharedApplication()
+
         cell.textLabel?.text = client.name
 
-        if ThirdPartyMailer.application(UIApplication.sharedApplication(), isMailClientAvailable: client) {
+        if ThirdPartyMailer.application(application, isMailClientAvailable: client) {
             cell.detailTextLabel?.text = NSLocalizedString("Available", comment: "")
             cell.detailTextLabel?.textColor = view.tintColor
         }
@@ -35,5 +37,15 @@ class ViewController: UITableViewController {
         }
 
         return cell
+    }
+
+
+    // MARK: - Table view delegate
+
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let client = clients[indexPath.row]
+        let application = UIApplication.sharedApplication()
+
+        ThirdPartyMailer.application(application, openMailClient: client, recipient: nil, subject: NSLocalizedString("Test ThirdPartyMailer", comment: ""), body: nil)
     }
 }
