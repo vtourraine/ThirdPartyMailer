@@ -23,18 +23,38 @@
 
 import Foundation
 
-/**
- 
-*/
+/// A third-party mail client, offering a custom URL scheme.
 public struct ThirdPartyMailClient {
+
+    /// The name of the mail client.
     public let name: String
+
+    /// The custom URL scheme of the mail client.
     public let URLScheme: String
 
+    /// The URL “root” (after the URL scheme and the colon).
     let URLRoot: String?
+
+    /// The URL query items key for the recipient.
     let URLRecipientKey: String?
+
+    /**
+     The URL query items key for the subject, or `nil` if this client doesn’t
+     support setting the subject.
+     */
     let URLSubjectKey: String?
+
+    /**
+     The URL query items key for the message body, or `nil` if this client
+     doesn’t support setting the message body.
+     */
     let URLBodyKey: String?
 
+    /**
+     Returns an array of predefined mail clients.
+
+     - Returns: An array of `ThirdPartyMailClient`.
+     */
     public static func clients() -> [ThirdPartyMailClient] {
         return [
             // sparrow:[to]?subject=[subject]&body=[body]
@@ -58,6 +78,15 @@ public struct ThirdPartyMailClient {
                 URLRoot: "//compose", URLRecipientKey: "to", URLSubjectKey: "subject", URLBodyKey: "plainBody")]
     }
 
+    /**
+     Returns the compose URL for the mail client, based on its custom URL scheme.
+
+     - Parameters recipient: The recipient for the email message (optional).
+     - Parameters subject: The subject for the email message (optional).
+     - Parameters body: The body for the email message (optional).
+
+     - Returns: A `NSURL` opening the mail client for the given parameters.
+     */
     public func composeURL(recipient: String?, subject: String?, body: String?) -> NSURL {
         var components = NSURLComponents(string: "\(URLScheme):\(URLRoot ?? "")")
         components?.scheme = self.URLScheme
