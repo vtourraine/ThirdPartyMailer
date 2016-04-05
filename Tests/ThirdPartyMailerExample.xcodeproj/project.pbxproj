@@ -7,17 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1426E27C1CB3DA7700238C1D /* ThirdPartyMailer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1426E2751CB3DA7700238C1D /* ThirdPartyMailer.framework */; };
+		1426E27D1CB3DA7700238C1D /* ThirdPartyMailer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1426E2751CB3DA7700238C1D /* ThirdPartyMailer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1426E2841CB3DA8800238C1D /* ThirdPartyMailClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1426E2821CB3DA8800238C1D /* ThirdPartyMailClient.swift */; };
+		1426E2851CB3DA8800238C1D /* ThirdPartyMailer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1426E2831CB3DA8800238C1D /* ThirdPartyMailer.swift */; };
 		1FB519821CA99D0E00E2977A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB519811CA99D0E00E2977A /* AppDelegate.swift */; };
 		1FB519841CA99D0E00E2977A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB519831CA99D0E00E2977A /* ViewController.swift */; };
 		1FB519871CA99D0E00E2977A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FB519851CA99D0E00E2977A /* Main.storyboard */; };
 		1FB519891CA99D0E00E2977A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FB519881CA99D0E00E2977A /* Assets.xcassets */; };
 		1FB5198C1CA99D0E00E2977A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FB5198A1CA99D0E00E2977A /* LaunchScreen.storyboard */; };
 		1FB519971CA99D0F00E2977A /* ThirdPartyMailClientsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB519961CA99D0F00E2977A /* ThirdPartyMailClientsTests.swift */; };
-		3162C5BFA78EA9E09CFE42A7 /* Pods_ThirdPartyMailerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85555D05292EB207ED3A1F81 /* Pods_ThirdPartyMailerTests.framework */; };
-		AF35944EF349348E0C971DF8 /* Pods_ThirdPartyMailerExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 653E1D1A59B24671118F31B4 /* Pods_ThirdPartyMailerExample.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		1426E27A1CB3DA7700238C1D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1FB519761CA99D0D00E2977A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1426E2741CB3DA7700238C1D;
+			remoteInfo = ThirdPartyMailer;
+		};
 		1FB519931CA99D0F00E2977A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1FB519761CA99D0D00E2977A /* Project object */;
@@ -27,7 +36,25 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		1426E2811CB3DA7700238C1D /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				1426E27D1CB3DA7700238C1D /* ThirdPartyMailer.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		1426E2751CB3DA7700238C1D /* ThirdPartyMailer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ThirdPartyMailer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1426E2791CB3DA7700238C1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1426E2821CB3DA8800238C1D /* ThirdPartyMailClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ThirdPartyMailClient.swift; path = ../../Source/ThirdPartyMailClient.swift; sourceTree = "<group>"; };
+		1426E2831CB3DA8800238C1D /* ThirdPartyMailer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ThirdPartyMailer.swift; path = ../../Source/ThirdPartyMailer.swift; sourceTree = "<group>"; };
 		1FB5197E1CA99D0D00E2977A /* ThirdPartyMailerExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThirdPartyMailerExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FB519811CA99D0E00E2977A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1FB519831CA99D0E00E2977A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -38,20 +65,21 @@
 		1FB519921CA99D0F00E2977A /* ThirdPartyMailerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ThirdPartyMailerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FB519961CA99D0F00E2977A /* ThirdPartyMailClientsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdPartyMailClientsTests.swift; sourceTree = "<group>"; };
 		1FB519981CA99D0F00E2977A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5881A00F459BD95ACD25F357 /* Pods-ThirdPartyMailerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThirdPartyMailerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ThirdPartyMailerTests/Pods-ThirdPartyMailerTests.release.xcconfig"; sourceTree = "<group>"; };
-		632631321571DE6BBC671096 /* Pods-ThirdPartyMailerExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThirdPartyMailerExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ThirdPartyMailerExample/Pods-ThirdPartyMailerExample.debug.xcconfig"; sourceTree = "<group>"; };
-		653E1D1A59B24671118F31B4 /* Pods_ThirdPartyMailerExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ThirdPartyMailerExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		72919D3F0C4677F1C2681D4C /* Pods-ThirdPartyMailerExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThirdPartyMailerExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-ThirdPartyMailerExample/Pods-ThirdPartyMailerExample.release.xcconfig"; sourceTree = "<group>"; };
-		85555D05292EB207ED3A1F81 /* Pods_ThirdPartyMailerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ThirdPartyMailerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A3B01EA2AD91B5B87AEB6025 /* Pods-ThirdPartyMailerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThirdPartyMailerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ThirdPartyMailerTests/Pods-ThirdPartyMailerTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		1426E2711CB3DA7700238C1D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1FB5197B1CA99D0D00E2977A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AF35944EF349348E0C971DF8 /* Pods_ThirdPartyMailerExample.framework in Frameworks */,
+				1426E27C1CB3DA7700238C1D /* ThirdPartyMailer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,21 +87,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3162C5BFA78EA9E09CFE42A7 /* Pods_ThirdPartyMailerTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1426E2761CB3DA7700238C1D /* ThirdPartyMailer */ = {
+			isa = PBXGroup;
+			children = (
+				1426E2821CB3DA8800238C1D /* ThirdPartyMailClient.swift */,
+				1426E2831CB3DA8800238C1D /* ThirdPartyMailer.swift */,
+				1426E2791CB3DA7700238C1D /* Info.plist */,
+			);
+			path = ThirdPartyMailer;
+			sourceTree = "<group>";
+		};
 		1FB519751CA99D0D00E2977A = {
 			isa = PBXGroup;
 			children = (
-				1FB519801CA99D0E00E2977A /* ThirdPartyMailerExample */,
-				1FB519951CA99D0F00E2977A /* ThirdPartyMailerExampleTests */,
+				1FB519801CA99D0E00E2977A /* Example App */,
+				1FB519951CA99D0F00E2977A /* Tests */,
+				1426E2761CB3DA7700238C1D /* ThirdPartyMailer */,
 				1FB5197F1CA99D0D00E2977A /* Products */,
-				6C87761D8C197110CFE5CC33 /* Pods */,
-				6146580422B20ECCD3FE6560 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -82,11 +118,12 @@
 			children = (
 				1FB5197E1CA99D0D00E2977A /* ThirdPartyMailerExample.app */,
 				1FB519921CA99D0F00E2977A /* ThirdPartyMailerTests.xctest */,
+				1426E2751CB3DA7700238C1D /* ThirdPartyMailer.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		1FB519801CA99D0E00E2977A /* ThirdPartyMailerExample */ = {
+		1FB519801CA99D0E00E2977A /* Example App */ = {
 			isa = PBXGroup;
 			children = (
 				1FB519811CA99D0E00E2977A /* AppDelegate.swift */,
@@ -96,55 +133,64 @@
 				1FB5198A1CA99D0E00E2977A /* LaunchScreen.storyboard */,
 				1FB5198D1CA99D0E00E2977A /* Info.plist */,
 			);
+			name = "Example App";
 			path = ThirdPartyMailerExample;
 			sourceTree = "<group>";
 		};
-		1FB519951CA99D0F00E2977A /* ThirdPartyMailerExampleTests */ = {
+		1FB519951CA99D0F00E2977A /* Tests */ = {
 			isa = PBXGroup;
 			children = (
 				1FB519961CA99D0F00E2977A /* ThirdPartyMailClientsTests.swift */,
 				1FB519981CA99D0F00E2977A /* Info.plist */,
 			);
+			name = Tests;
 			path = ThirdPartyMailerExampleTests;
-			sourceTree = "<group>";
-		};
-		6146580422B20ECCD3FE6560 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				653E1D1A59B24671118F31B4 /* Pods_ThirdPartyMailerExample.framework */,
-				85555D05292EB207ED3A1F81 /* Pods_ThirdPartyMailerTests.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		6C87761D8C197110CFE5CC33 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				632631321571DE6BBC671096 /* Pods-ThirdPartyMailerExample.debug.xcconfig */,
-				72919D3F0C4677F1C2681D4C /* Pods-ThirdPartyMailerExample.release.xcconfig */,
-				A3B01EA2AD91B5B87AEB6025 /* Pods-ThirdPartyMailerTests.debug.xcconfig */,
-				5881A00F459BD95ACD25F357 /* Pods-ThirdPartyMailerTests.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		1426E2721CB3DA7700238C1D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
-		1FB5197D1CA99D0D00E2977A /* ThirdPartyMailerExample */ = {
+		1426E2741CB3DA7700238C1D /* ThirdPartyMailer */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1FB5199B1CA99D0F00E2977A /* Build configuration list for PBXNativeTarget "ThirdPartyMailerExample" */;
+			buildConfigurationList = 1426E27E1CB3DA7700238C1D /* Build configuration list for PBXNativeTarget "ThirdPartyMailer" */;
 			buildPhases = (
-				5040D936355CB3660842933E /* Check Pods Manifest.lock */,
-				1FB5197A1CA99D0D00E2977A /* Sources */,
-				1FB5197B1CA99D0D00E2977A /* Frameworks */,
-				1FB5197C1CA99D0D00E2977A /* Resources */,
-				E763AE88A51EF0E6C4F268ED /* Embed Pods Frameworks */,
-				606F96B66B7D4863344C0EE3 /* Copy Pods Resources */,
+				1426E2701CB3DA7700238C1D /* Sources */,
+				1426E2711CB3DA7700238C1D /* Frameworks */,
+				1426E2721CB3DA7700238C1D /* Headers */,
+				1426E2731CB3DA7700238C1D /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+			);
+			name = ThirdPartyMailer;
+			productName = ThirdPartyMailer;
+			productReference = 1426E2751CB3DA7700238C1D /* ThirdPartyMailer.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		1FB5197D1CA99D0D00E2977A /* ThirdPartyMailerExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1FB5199B1CA99D0F00E2977A /* Build configuration list for PBXNativeTarget "ThirdPartyMailerExample" */;
+			buildPhases = (
+				1FB5197A1CA99D0D00E2977A /* Sources */,
+				1FB5197B1CA99D0D00E2977A /* Frameworks */,
+				1FB5197C1CA99D0D00E2977A /* Resources */,
+				1426E2811CB3DA7700238C1D /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1426E27B1CB3DA7700238C1D /* PBXTargetDependency */,
 			);
 			name = ThirdPartyMailerExample;
 			productName = ThirdPartyMailerExample;
@@ -155,12 +201,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1FB5199E1CA99D0F00E2977A /* Build configuration list for PBXNativeTarget "ThirdPartyMailerTests" */;
 			buildPhases = (
-				37AC9CB553D45C405F746650 /* Check Pods Manifest.lock */,
 				1FB5198E1CA99D0F00E2977A /* Sources */,
 				1FB5198F1CA99D0F00E2977A /* Frameworks */,
 				1FB519901CA99D0F00E2977A /* Resources */,
-				94532842713933AE9F255334 /* Embed Pods Frameworks */,
-				DE28703EA96FCD68FB783498 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -182,6 +225,9 @@
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "Vincent Tourraine";
 				TargetAttributes = {
+					1426E2741CB3DA7700238C1D = {
+						CreatedOnToolsVersion = 7.3;
+					};
 					1FB5197D1CA99D0D00E2977A = {
 						CreatedOnToolsVersion = 7.3;
 					};
@@ -206,11 +252,19 @@
 			targets = (
 				1FB5197D1CA99D0D00E2977A /* ThirdPartyMailerExample */,
 				1FB519911CA99D0F00E2977A /* ThirdPartyMailerTests */,
+				1426E2741CB3DA7700238C1D /* ThirdPartyMailer */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		1426E2731CB3DA7700238C1D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1FB5197C1CA99D0D00E2977A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -230,100 +284,16 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		37AC9CB553D45C405F746650 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		5040D936355CB3660842933E /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		606F96B66B7D4863344C0EE3 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ThirdPartyMailerExample/Pods-ThirdPartyMailerExample-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		94532842713933AE9F255334 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ThirdPartyMailerTests/Pods-ThirdPartyMailerTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		DE28703EA96FCD68FB783498 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ThirdPartyMailerTests/Pods-ThirdPartyMailerTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E763AE88A51EF0E6C4F268ED /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ThirdPartyMailerExample/Pods-ThirdPartyMailerExample-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
+		1426E2701CB3DA7700238C1D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1426E2851CB3DA8800238C1D /* ThirdPartyMailer.swift in Sources */,
+				1426E2841CB3DA8800238C1D /* ThirdPartyMailClient.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1FB5197A1CA99D0D00E2977A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -344,6 +314,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		1426E27B1CB3DA7700238C1D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1426E2741CB3DA7700238C1D /* ThirdPartyMailer */;
+			targetProxy = 1426E27A1CB3DA7700238C1D /* PBXContainerItemProxy */;
+		};
 		1FB519941CA99D0F00E2977A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 1FB5197D1CA99D0D00E2977A /* ThirdPartyMailerExample */;
@@ -371,6 +346,47 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		1426E27F1CB3DA7700238C1D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = ThirdPartyMailer/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.vtourraine.ThirdPartyMailer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		1426E2801CB3DA7700238C1D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = ThirdPartyMailer/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.vtourraine.ThirdPartyMailer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		1FB519991CA99D0F00E2977A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -458,9 +474,9 @@
 		};
 		1FB5199C1CA99D0F00E2977A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 632631321571DE6BBC671096 /* Pods-ThirdPartyMailerExample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = ThirdPartyMailerExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.vtourraine.ThirdPartyMailerExample;
@@ -470,9 +486,9 @@
 		};
 		1FB5199D1CA99D0F00E2977A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 72919D3F0C4677F1C2681D4C /* Pods-ThirdPartyMailerExample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = ThirdPartyMailerExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.vtourraine.ThirdPartyMailerExample;
@@ -482,7 +498,6 @@
 		};
 		1FB5199F1CA99D0F00E2977A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A3B01EA2AD91B5B87AEB6025 /* Pods-ThirdPartyMailerTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = ThirdPartyMailerExampleTests/Info.plist;
@@ -495,7 +510,6 @@
 		};
 		1FB519A01CA99D0F00E2977A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5881A00F459BD95ACD25F357 /* Pods-ThirdPartyMailerTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = ThirdPartyMailerExampleTests/Info.plist;
@@ -509,6 +523,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		1426E27E1CB3DA7700238C1D /* Build configuration list for PBXNativeTarget "ThirdPartyMailer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1426E27F1CB3DA7700238C1D /* Debug */,
+				1426E2801CB3DA7700238C1D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		1FB519791CA99D0D00E2977A /* Build configuration list for PBXProject "ThirdPartyMailerExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

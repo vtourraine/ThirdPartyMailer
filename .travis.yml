@@ -1,6 +1,6 @@
 language: objective-c
 xcode_sdk: iphonesimulator
 osx_image: xcode7.3
-
+  
 script:
- - xcodebuild test -workspace Tests/ThirdPartyMailerExample.xcworkspace -scheme ThirdPartyMailerExample -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
+ - xcodebuild test -project Tests/ThirdPartyMailerExample.xcodeproj -scheme ThirdPartyMailerExample -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO

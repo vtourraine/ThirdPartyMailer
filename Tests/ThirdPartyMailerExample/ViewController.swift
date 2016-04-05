@@ -47,5 +47,7 @@ class ViewController: UITableViewController {
         let application = UIApplication.sharedApplication()
 
         ThirdPartyMailer.application(application, openMailClient: client, recipient: nil, subject: NSLocalizedString("Test ThirdPartyMailer", comment: ""), body: nil)
+
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
 }
