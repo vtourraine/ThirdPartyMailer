@@ -17,7 +17,7 @@
   },
   "source_files": "Source/*.swift",
   "platforms": {
-    "ios": "7.0"
+    "ios": "8.0"
   },
   "frameworks": "UIKit",
   "requires_arc": true
