@@ -18,6 +18,17 @@ Airmail  | `airmail`       | [link](https://itunes.apple.com/app/id993160329?mt=
 Unfortunately, not all mail clients offer URL schemes to be supported by `ThirdPartyMailer`. If you’re aware of another candidate, please [let us know](https://github.com/vtourraine/ThirdPartyMailer/issues).
 
 
+## How to install
+
+With [CocoaPods](https://cocoapods.org), simply add ThirdPartyMailer to your Podfile:
+
+```
+pod 'ThirdPartyMailer'
+```
+
+Or, you can manually import the files from the Source folder.
+
+
 ## How to use
 
 Getting the list of available clients:
