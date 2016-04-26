@@ -60,10 +60,28 @@ public class ThirdPartyMailer {
     }
 }
 
-/// Extension with URL-specific methods for `UIApplication`
+/**
+ Extension with URL-specific methods for `UIApplication`, or any other object responsible for handling URLs.
+ */
 public protocol UIApplicationOpenURLProtocol {
+    /**
+     Returns a Boolean value indicating whether or not the URL’s scheme can be handled by some app installed on the device.
+
+     - Parameters url: A URL (Universal Resource Locator). At runtime, the system tests the URL’s scheme to determine if there is an installed app that is registered to handle the scheme. More than one app can be registered to handle a scheme.
+
+     - Returns: `NO` if there is no app installed on the device that is registered to handle the URL’s scheme, or if you have not declared the URL’s scheme in your `Info.plist` file; otherwise, `YES`.
+     */
     func canOpenURL(url: NSURL) -> Bool
+
+    /**
+     Attempts to open the resource at the specified URL.
+
+     - Parameters url: The URL to open.
+
+     - Returns: `YES` if the resource located by the URL was successfully opened; otherwise `NO`.
+     */
     func openURL(url: NSURL) -> Bool
 }
 
+/// Extend `UIApplication` to conform to the `UIApplicationOpenURLProtocol`.
 extension UIApplication: UIApplicationOpenURLProtocol {}
