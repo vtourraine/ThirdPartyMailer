@@ -16,14 +16,14 @@ class ViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return clients.count
     }
 
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         let client = clients[indexPath.row]
-        let application = UIApplication.sharedApplication()
+        let application = UIApplication.shared
 
         cell.textLabel?.text = client.name
 
@@ -33,7 +33,7 @@ class ViewController: UITableViewController {
         }
         else {
             cell.detailTextLabel?.text = NSLocalizedString("Unvailable", comment: "")
-            cell.detailTextLabel?.textColor = UIColor.redColor()
+            cell.detailTextLabel?.textColor = UIColor.red
         }
 
         return cell
@@ -42,12 +42,12 @@ class ViewController: UITableViewController {
 
     // MARK: - Table view delegate
 
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let client = clients[indexPath.row]
-        let application = UIApplication.sharedApplication()
+        let application = UIApplication.shared
 
         ThirdPartyMailer.application(application, openMailClient: client, recipient: nil, subject: NSLocalizedString("Test ThirdPartyMailer", comment: ""), body: nil)
 
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }

@@ -24,7 +24,7 @@
 import UIKit
 
 /// Tests third party mail clients availability, and opens third party mail clients in compose mode.
-public class ThirdPartyMailer {
+open class ThirdPartyMailer {
 
     /**
      Tests the availability of a third-party mail client.
@@ -34,11 +34,11 @@ public class ThirdPartyMailer {
 
      - Returns: `true` if the application can open the client; otherwise, `false`.
      */
-    public class func application(application: UIApplicationOpenURLProtocol, isMailClientAvailable client: ThirdPartyMailClient) -> Bool {
-        let components = NSURLComponents()
+    open class func application(_ application: UIApplicationOpenURLProtocol, isMailClientAvailable client: ThirdPartyMailClient) -> Bool {
+        var components = URLComponents()
         components.scheme = client.URLScheme
 
-        guard let URL = components.URL
+        guard let URL = components.url
             else { return false }
 
         return application.canOpenURL(URL)
@@ -55,7 +55,7 @@ public class ThirdPartyMailer {
 
      - Returns: `true` if the application opens the client; otherwise, `false`.
      */
-    public class func application(application: UIApplicationOpenURLProtocol, openMailClient client: ThirdPartyMailClient, recipient: String?, subject: String?, body: String?) -> Bool {
+    open class func application(_ application: UIApplicationOpenURLProtocol, openMailClient client: ThirdPartyMailClient, recipient: String?, subject: String?, body: String?) -> Bool {
         return application.openURL(client.composeURL(recipient, subject: subject, body: body))
     }
 }
@@ -71,7 +71,7 @@ public protocol UIApplicationOpenURLProtocol {
 
      - Returns: `NO` if there is no app installed on the device that is registered to handle the URL’s scheme, or if you have not declared the URL’s scheme in your `Info.plist` file; otherwise, `YES`.
      */
-    func canOpenURL(url: NSURL) -> Bool
+    func canOpenURL(_ url: URL) -> Bool
 
     /**
      Attempts to open the resource at the specified URL.
@@ -80,7 +80,7 @@ public protocol UIApplicationOpenURLProtocol {
 
      - Returns: `YES` if the resource located by the URL was successfully opened; otherwise `NO`.
      */
-    func openURL(url: NSURL) -> Bool
+    func openURL(_ url: URL) -> Bool
 }
 
 /// Extend `UIApplication` to conform to the `UIApplicationOpenURLProtocol`.

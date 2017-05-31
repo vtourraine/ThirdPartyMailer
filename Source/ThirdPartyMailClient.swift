@@ -87,39 +87,39 @@ public struct ThirdPartyMailClient {
 
      - Returns: A `NSURL` opening the mail client for the given parameters.
      */
-    public func composeURL(recipient: String?, subject: String?, body: String?) -> NSURL {
-        var components = NSURLComponents(string: "\(URLScheme):\(URLRoot ?? "")")
+    public func composeURL(_ recipient: String?, subject: String?, body: String?) -> URL {
+        var components = URLComponents(string: "\(URLScheme):\(URLRoot ?? "")")
         components?.scheme = self.URLScheme
 
         if URLRecipientKey == nil {
             if let recipient = recipient {
-                components = NSURLComponents(string: "\(URLScheme):\(URLRoot ?? "")\(recipient)")
+                components = URLComponents(string: "\(URLScheme):\(URLRoot ?? "")\(recipient)")
             }
         }
 
-        var queryItems: [NSURLQueryItem] = []
+        var queryItems: [URLQueryItem] = []
 
         if let recipient = recipient, let URLRecipientKey = URLRecipientKey {
-            queryItems.append(NSURLQueryItem(name: URLRecipientKey, value:recipient))
+            queryItems.append(URLQueryItem(name: URLRecipientKey, value:recipient))
         }
 
         if let subject = subject, let URLSubjectKey = URLSubjectKey {
-            queryItems.append(NSURLQueryItem(name: URLSubjectKey, value:subject))
+            queryItems.append(URLQueryItem(name: URLSubjectKey, value:subject))
         }
 
         if let body = body, let URLBodyKey = URLBodyKey {
-            queryItems.append(NSURLQueryItem(name: URLBodyKey, value:body))
+            queryItems.append(URLQueryItem(name: URLBodyKey, value:body))
         }
 
         if queryItems.isEmpty == false {
             components?.queryItems = queryItems
         }
 
-        if let URL = components?.URL {
+        if let URL = components?.url {
             return URL
         }
         else {
-            return NSURL()
+            return URLComponents().url!
         }
     }
 }
