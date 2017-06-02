@@ -44,7 +44,7 @@ let clients = ThirdPartyMailClient.clients()
 Testing the client availability (i.e. is the app installed):
 
 ``` swift
-let application = UIApplication.sharedApplication()
+let application = UIApplication.shared
 
 if ThirdPartyMailer.application(application, isMailClientAvailable: client) {
     // ...
@@ -54,7 +54,7 @@ if ThirdPartyMailer.application(application, isMailClientAvailable: client) {
 Opening the client (with optional message recipient, subject, and body):
 
 ``` swift
-let application = UIApplication.sharedApplication()
+let application = UIApplication.shared
 
 ThirdPartyMailer.application(application, openMailClient: client, recipient: nil, subject: nil, body: nil)
 ```
@@ -62,7 +62,7 @@ ThirdPartyMailer.application(application, openMailClient: client, recipient: nil
 
 ## Requirements
 
-ThirdPartyMailer is written in Swift 2.2, requires iOS 8.0 and above, Xcode 7.3 and above.
+ThirdPartyMailer is written in Swift 3.0, requires iOS 8.0 and above, Xcode 8.0 and above.
 
 
 ## Credits
