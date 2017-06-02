@@ -3,4 +3,4 @@ xcode_sdk: iphonesimulator
 osx_image: xcode8
   
 script:
- - xcodebuild test -project Tests/ThirdPartyMailerExample.xcodeproj -scheme ThirdPartyMailerExample -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
+ - xcodebuild test -project Tests/ThirdPartyMailerExample.xcodeproj -scheme ThirdPartyMailerExample -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 6,OS=10.0' ONLY_ACTIVE_ARCH=NO
