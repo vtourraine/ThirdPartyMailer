@@ -1,6 +1,6 @@
 {
   "name": "ThirdPartyMailer",
-  "version": "1.1",
+  "version": "1.2",
   "summary": "Interact with third-party iOS mail clients, using custom URL schemes.",
   "homepage": "https://github.com/vtourraine/ThirdPartyMailer",
   "license": {
@@ -13,7 +13,7 @@
   "social_media_url": "http://twitter.com/vtourraine",
   "source": {
     "git": "https://github.com/vtourraine/ThirdPartyMailer.git",
-    "tag": "1.1"
+    "tag": "1.2"
   },
   "source_files": "Source/*.swift",
   "platforms": {
