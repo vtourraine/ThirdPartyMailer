@@ -3,7 +3,7 @@
 //  ThirdPartyMailerExampleTests
 //
 //  Created by Vincent Tourraine on 28/03/16.
-//  Copyright © 2016 Vincent Tourraine. All rights reserved.
+//  Copyright © 2016-2018 Vincent Tourraine. All rights reserved.
 //
 
 import XCTest
@@ -101,6 +101,20 @@ class ThirdPartyMailClientsTests: XCTestCase {
 
         _ = ThirdPartyMailer.application(application, openMailClient: airmail!, recipient: "test@mail.com", subject: "Sub", body: "ABC def")
         XCTAssertEqual(application.lastOpenedURL?.absoluteString, "airmail://compose?to=test@mail.com&subject=Sub&plainBody=ABC%20def")
+    }
+
+    func testOutlook() {
+        let outlook = clientWithURLScheme("ms-outlook")
+        XCTAssertNotNil(outlook)
+
+        _ = ThirdPartyMailer.application(application, openMailClient: outlook!, recipient: nil, subject: nil, body: nil)
+        XCTAssertEqual(application.lastOpenedURL?.absoluteString, "ms-outlook://compose")
+
+        _ = ThirdPartyMailer.application(application, openMailClient: outlook!, recipient: "test@mail.com", subject: nil, body: nil)
+        XCTAssertEqual(application.lastOpenedURL?.absoluteString, "ms-outlook://compose?to=test@mail.com")
+
+        _ = ThirdPartyMailer.application(application, openMailClient: outlook!, recipient: "test@mail.com", subject: "Sub", body: "ABC def")
+        XCTAssertEqual(application.lastOpenedURL?.absoluteString, "ms-outlook://compose?to=test@mail.com&subject=Sub&body=ABC%20def")
     }
 }
 

@@ -75,7 +75,10 @@ public struct ThirdPartyMailClient {
 
             // airmail://compose?subject=[subject]&from=[from]&to=[to]&cc=[cc]&bcc=[bcc]&plainBody=[plainBody]&htmlBody=[htmlBody]
             ThirdPartyMailClient(name: "Airmail", URLScheme: "airmail",
-                URLRoot: "//compose", URLRecipientKey: "to", URLSubjectKey: "subject", URLBodyKey: "plainBody")]
+                URLRoot: "//compose", URLRecipientKey: "to", URLSubjectKey: "subject", URLBodyKey: "plainBody"),
+
+            // ms-outlook://compose?subject=[subject]&body=[body]&to=[to]
+            ThirdPartyMailClient(name: "Microsoft Outlook", URLScheme: "ms-outlook", URLRoot: "//compose", URLRecipientKey: "to", URLSubjectKey: "subject", URLBodyKey: "body")]
     }
 
     /**

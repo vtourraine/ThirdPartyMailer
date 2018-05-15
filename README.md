@@ -10,13 +10,14 @@ _Interact with third-party iOS mail clients, using custom URL schemes._
 
 ## Supported mail clients
 
-Client   | URL Scheme      | App Store
--------- | --------------- | ---------
-Sparrow  | `sparrow`       | _discontinued_
-Gmail    | `googlegmail`   | [link](https://itunes.apple.com/app/id422689480?mt=8)
-Dispatch | `x-dispatch`    | [link](https://itunes.apple.com/app/id642022747?mt=8)
-Spark    | `readdle-spark` | [link](https://itunes.apple.com/app/id997102246?mt=8)
-Airmail  | `airmail`       | [link](https://itunes.apple.com/app/id993160329?mt=8)
+Client             | URL Scheme      | App Store
+------------------ | --------------- | ---------
+Sparrow            | `sparrow`       | _discontinued_
+Gmail              | `googlegmail`   | [link](https://itunes.apple.com/app/id422689480?mt=8)
+Dispatch           | `x-dispatch`    | [link](https://itunes.apple.com/app/id642022747?mt=8)
+Spark              | `readdle-spark` | [link](https://itunes.apple.com/app/id997102246?mt=8)
+Airmail            | `airmail`       | [link](https://itunes.apple.com/app/id993160329?mt=8)
+Microsoft Outlook  | `ms-outlook`    | [link](https://itunes.apple.com/app/id951937596?mt=8)
 
 Unfortunately, not all mail clients offer URL schemes to be supported by `ThirdPartyMailer`. If you’re aware of another candidate, please [let us know](https://github.com/vtourraine/ThirdPartyMailer/issues).
 

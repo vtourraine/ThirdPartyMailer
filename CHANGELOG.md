@@ -1,5 +1,10 @@
 # ThirdPartyMailer changelog
 
+## 1.2
+
+- Add Microsoft Outlook support
+
+
 ## 1.1
 
 - Update to Swift 3.2
