@@ -78,7 +78,10 @@ public struct ThirdPartyMailClient {
                 URLRoot: "//compose", URLRecipientKey: "to", URLSubjectKey: "subject", URLBodyKey: "plainBody"),
 
             // ms-outlook://compose?subject=[subject]&body=[body]&to=[to]
-            ThirdPartyMailClient(name: "Microsoft Outlook", URLScheme: "ms-outlook", URLRoot: "//compose", URLRecipientKey: "to", URLSubjectKey: "subject", URLBodyKey: "body")]
+            ThirdPartyMailClient(name: "Microsoft Outlook", URLScheme: "ms-outlook", URLRoot: "//compose", URLRecipientKey: "to", URLSubjectKey: "subject", URLBodyKey: "body"),
+
+            // ymail://mail/compose?subject=[subject]&body=[body]&to=[to]
+            ThirdPartyMailClient(name: "Yahoo Mail", URLScheme: "ymail", URLRoot: "//mail/compose", URLRecipientKey: "to", URLSubjectKey: "subject", URLBodyKey: "body")]
     }
 
     /**

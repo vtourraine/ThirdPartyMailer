@@ -1,8 +1,9 @@
 # ThirdPartyMailer changelog
 
-## 1.2
+## 1.2 (work in progress)
 
 - Add Microsoft Outlook support
+- Add Yahoo Mail support
 
 
 ## 1.1

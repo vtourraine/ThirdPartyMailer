@@ -116,6 +116,20 @@ class ThirdPartyMailClientsTests: XCTestCase {
         _ = ThirdPartyMailer.application(application, openMailClient: outlook!, recipient: "test@mail.com", subject: "Sub", body: "ABC def")
         XCTAssertEqual(application.lastOpenedURL?.absoluteString, "ms-outlook://compose?to=test@mail.com&subject=Sub&body=ABC%20def")
     }
+
+    func testYahooMail() {
+        let yahoo = clientWithURLScheme("ymail")
+        XCTAssertNotNil(yahoo)
+
+        _ = ThirdPartyMailer.application(application, openMailClient: yahoo!, recipient: nil, subject: nil, body: nil)
+        XCTAssertEqual(application.lastOpenedURL?.absoluteString, "ymail://mail/compose")
+
+        _ = ThirdPartyMailer.application(application, openMailClient: yahoo!, recipient: "test@mail.com", subject: nil, body: nil)
+        XCTAssertEqual(application.lastOpenedURL?.absoluteString, "ymail://mail/compose?to=test@mail.com")
+
+        _ = ThirdPartyMailer.application(application, openMailClient: yahoo!, recipient: "test@mail.com", subject: "Sub", body: "ABC def")
+        XCTAssertEqual(application.lastOpenedURL?.absoluteString, "ymail://mail/compose?to=test@mail.com&subject=Sub&body=ABC%20def")
+    }
 }
 
 class ApplicationMock: UIApplicationOpenURLProtocol {
