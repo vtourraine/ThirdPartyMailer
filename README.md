@@ -5,7 +5,6 @@ _Interact with third-party iOS mail clients, using custom URL schemes._
 ![Platform iOS](https://img.shields.io/badge/platform-iOS-blue.svg)
 [![Build Status](https://travis-ci.org/vtourraine/ThirdPartyMailer.svg?branch=master)](https://travis-ci.org/vtourraine/ThirdPartyMailer)
 [![CocoaPods compatible](https://img.shields.io/cocoapods/v/ThirdPartyMailer.svg)](https://cocoapods.org/pods/ThirdPartyMailer)
-[![CocoaPods documentation](https://img.shields.io/cocoapods/metrics/doc-percent/ThirdPartyMailer.svg)](http://cocoadocs.org/docsets/ThirdPartyMailer)
 [![MIT license](http://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/vtourraine/ThirdPartyMailer/raw/master/LICENSE.md)
 
 
@@ -62,7 +61,7 @@ ThirdPartyMailer.application(application, openMailClient: client, recipient: nil
 
 ## Requirements
 
-ThirdPartyMailer is written in Swift 3.0, requires iOS 8.0 and above, Xcode 8.0 and above.
+ThirdPartyMailer is written in Swift 3.2, requires iOS 8.0 and above, Xcode 8.0 and above.
 
 
 ## Credits

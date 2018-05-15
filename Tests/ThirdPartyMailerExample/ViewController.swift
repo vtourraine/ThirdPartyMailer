@@ -3,7 +3,7 @@
 //  ThirdPartyMailerExample
 //
 //  Created by Vincent Tourraine on 28/03/16.
-//  Copyright © 2016 Vincent Tourraine. All rights reserved.
+//  Copyright © 2016-2018 Vincent Tourraine. All rights reserved.
 //
 
 import UIKit
@@ -46,7 +46,7 @@ class ViewController: UITableViewController {
         let client = clients[indexPath.row]
         let application = UIApplication.shared
 
-        ThirdPartyMailer.application(application, openMailClient: client, recipient: nil, subject: NSLocalizedString("Test ThirdPartyMailer", comment: ""), body: nil)
+        _ = ThirdPartyMailer.application(application, openMailClient: client, recipient: nil, subject: NSLocalizedString("Test ThirdPartyMailer", comment: ""), body: nil)
 
         tableView.deselectRow(at: indexPath, animated: true)
     }

@@ -1,5 +1,10 @@
 # ThirdPartyMailer changelog
 
+## 1.1
+
+- Update to Swift 3.2
+
+
 ## 1.0
 
 - Update to Swift 3
