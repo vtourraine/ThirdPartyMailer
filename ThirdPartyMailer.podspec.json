@@ -21,5 +21,5 @@
   },
   "frameworks": "UIKit",
   "requires_arc": true,
-  "swift_version": "3.2"
+  "swift_version": "4.2"
 }

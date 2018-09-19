@@ -63,7 +63,7 @@ ThirdPartyMailer.application(application, openMailClient: client, recipient: nil
 
 ## Requirements
 
-ThirdPartyMailer is written in Swift 3.2, requires iOS 8.0 and above, Xcode 8.0 and above.
+ThirdPartyMailer is written in Swift 4.2, requires iOS 8.0 and above, Xcode 8.0 and above.
 
 
 ## Credits
