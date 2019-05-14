@@ -42,7 +42,9 @@ Getting the list of available clients:
 let clients = ThirdPartyMailClient.clients()
 ```
 
-Testing the client availability (i.e. is the app installed):
+Testing the client availability (i.e. if the app is installed):
+
+⚠️ In order to test the client availability, your app needs to declare the relevant URL scheme in its `Info.plist` file, by adding a `LSApplicationQueriesSchemes` array. You can find [an example here](https://github.com/vtourraine/ThirdPartyMailer/blob/69ef4095336ccebc76ac528234c1739f66d258d1/Tests/ThirdPartyMailerExample/Info.plist#L23), or check out the [documentation](https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/LaunchServicesKeys.html#//apple_ref/doc/uid/TP40009250-SW14).
 
 ``` swift
 let application = UIApplication.shared
