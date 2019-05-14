@@ -36,7 +36,7 @@ Or, you can manually import the files from the Source folder.
 
 ## How to use
 
-Getting the list of available clients:
+Getting the list of supported clients:
 
 ``` swift
 let clients = ThirdPartyMailClient.clients()
