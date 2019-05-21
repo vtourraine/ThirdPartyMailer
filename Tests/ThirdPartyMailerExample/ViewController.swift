@@ -3,7 +3,7 @@
 //  ThirdPartyMailerExample
 //
 //  Created by Vincent Tourraine on 28/03/16.
-//  Copyright © 2016-2018 Vincent Tourraine. All rights reserved.
+//  Copyright © 2016-2019 Vincent Tourraine. All rights reserved.
 //
 
 import UIKit
