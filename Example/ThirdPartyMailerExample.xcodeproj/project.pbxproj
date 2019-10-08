@@ -53,8 +53,8 @@
 /* Begin PBXFileReference section */
 		1426E2751CB3DA7700238C1D /* ThirdPartyMailer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ThirdPartyMailer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1426E2791CB3DA7700238C1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1426E2821CB3DA8800238C1D /* ThirdPartyMailClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ThirdPartyMailClient.swift; path = ../../Source/ThirdPartyMailClient.swift; sourceTree = "<group>"; };
-		1426E2831CB3DA8800238C1D /* ThirdPartyMailer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ThirdPartyMailer.swift; path = ../../Source/ThirdPartyMailer.swift; sourceTree = "<group>"; };
+		1426E2821CB3DA8800238C1D /* ThirdPartyMailClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ThirdPartyMailClient.swift; path = ../../Sources/ThirdPartyMailer/ThirdPartyMailClient.swift; sourceTree = "<group>"; };
+		1426E2831CB3DA8800238C1D /* ThirdPartyMailer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ThirdPartyMailer.swift; path = ../../Sources/ThirdPartyMailer/ThirdPartyMailer.swift; sourceTree = "<group>"; };
 		1FB5197E1CA99D0D00E2977A /* ThirdPartyMailerExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThirdPartyMailerExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FB519811CA99D0E00E2977A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1FB519831CA99D0E00E2977A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -63,7 +63,7 @@
 		1FB5198B1CA99D0E00E2977A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1FB5198D1CA99D0E00E2977A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1FB519921CA99D0F00E2977A /* ThirdPartyMailerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ThirdPartyMailerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1FB519961CA99D0F00E2977A /* ThirdPartyMailClientsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdPartyMailClientsTests.swift; sourceTree = "<group>"; };
+		1FB519961CA99D0F00E2977A /* ThirdPartyMailClientsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ThirdPartyMailClientsTests.swift; path = ../../Tests/ThirdPartyMailerTests/ThirdPartyMailClientsTests.swift; sourceTree = "<group>"; };
 		1FB519981CA99D0F00E2977A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 

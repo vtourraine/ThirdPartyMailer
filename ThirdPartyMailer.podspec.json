@@ -15,7 +15,7 @@
     "git": "https://github.com/vtourraine/ThirdPartyMailer.git",
     "tag": "1.4"
   },
-  "source_files": "Source/*.swift",
+  "source_files": "Sources/ThirdPartyMailer/*.swift",
   "platforms": {
     "ios": "8.0"
   },

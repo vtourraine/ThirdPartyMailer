@@ -1,5 +1,10 @@
 # ThirdPartyMailer changelog
 
+## 1.5 (work in progress)
+
+- Add Swift Package Manager support
+
+
 ## 1.4
 
 - Update to Swift 5.0
