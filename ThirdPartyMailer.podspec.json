@@ -5,7 +5,7 @@
   "homepage": "https://github.com/vtourraine/ThirdPartyMailer",
   "license": {
     "type": "MIT",
-    "file": "LICENSE.md"
+    "file": "LICENSE.txt"
   },
   "authors": {
     "Vincent Tourraine": "me@vtourraine.net"
