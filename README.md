@@ -5,6 +5,7 @@ _Interact with third-party iOS mail clients, using custom URL schemes._
 ![Platform iOS](https://img.shields.io/badge/platform-iOS-blue.svg)
 ![Swift 5](https://img.shields.io/badge/Swift-5-blue.svg)
 [![Build Status](https://travis-ci.org/vtourraine/ThirdPartyMailer.svg?branch=master)](https://travis-ci.org/vtourraine/ThirdPartyMailer)
+![Swift Package Manager](https://img.shields.io/badge/support-Swift_Package_Manager-orange.svg)
 [![CocoaPods compatible](https://img.shields.io/cocoapods/v/ThirdPartyMailer.svg)](https://cocoapods.org/pods/ThirdPartyMailer)
 [![MIT license](http://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/vtourraine/ThirdPartyMailer/raw/master/LICENSE.md)
 
