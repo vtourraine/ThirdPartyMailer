@@ -26,13 +26,20 @@ Unfortunately, not all mail clients offer URL schemes to be supported by `ThirdP
 
 ## How to install
 
+### Swift Package Manager
+
+In Xcode, click on the “File” menu, “Swift Packages”, “Add Package Dependency…”, then enter the URL for this repo: `https://github.com/vtourraine/ThirdPartyMailer.git`.
+
+
+### CocoaPods
+
 With [CocoaPods](https://cocoapods.org), simply add ThirdPartyMailer to your Podfile:
 
 ```
 pod 'ThirdPartyMailer'
 ```
 
-Or, you can manually import the files from the Source folder.
+Or, you can manually import the files from the Sources folder.
 
 
 ## How to use
