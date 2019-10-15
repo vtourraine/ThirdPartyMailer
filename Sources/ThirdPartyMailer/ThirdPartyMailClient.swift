@@ -32,11 +32,8 @@ public struct ThirdPartyMailClient {
     /// The custom URL scheme of the mail client.
     public let URLScheme: String
 
-    /// The URL “root” slashes (after the URL scheme and the colon).
+    /// The URL “root” (after the URL scheme and the colon).
     let URLRoot: String?
-    
-    /// The URL compose keyword (after the URL scheme, colon and slashes).
-    let URLCompose: String?
 
     /// The URL query items key for the recipient.
     let URLRecipientKey: String?
@@ -62,31 +59,29 @@ public struct ThirdPartyMailClient {
         return [
             // sparrow:[to]?subject=[subject]&body=[body]
             ThirdPartyMailClient(name: "Sparrow", URLScheme: "sparrow",
-                URLRoot: nil, URLCompose: nil, URLRecipientKey: nil, URLSubjectKey: "subject", URLBodyKey: "body"),
+                URLRoot: nil, URLRecipientKey: nil, URLSubjectKey: "subject", URLBodyKey: "body"),
 
             // googlegmail:///co?to=[to]&subject=[subject]&body=[body]
             ThirdPartyMailClient(name: "Gmail", URLScheme: "googlegmail",
-                URLRoot: "///", URLCompose: "co", URLRecipientKey: "to", URLSubjectKey: "subject", URLBodyKey: "body"),
+                URLRoot: "///co", URLRecipientKey: "to", URLSubjectKey: "subject", URLBodyKey: "body"),
 
             // x-dispatch:///compose?to=[to]&subject=[subject]&body=[body]
             ThirdPartyMailClient(name: "Dispatch", URLScheme: "x-dispatch",
-                URLRoot: "///", URLCompose: "compose", URLRecipientKey: "to", URLSubjectKey: "subject", URLBodyKey: "body"),
+                URLRoot: "///compose", URLRecipientKey: "to", URLSubjectKey: "subject", URLBodyKey: "body"),
 
             // readdle-spark://compose?subject=[subject]&body=[body]&recipient=[recipient]
             ThirdPartyMailClient(name: "Spark", URLScheme: "readdle-spark",
-                URLRoot: "//", URLCompose: "compose", URLRecipientKey: "recipient", URLSubjectKey: "subject", URLBodyKey: "body"),
+                URLRoot: "//compose", URLRecipientKey: "recipient", URLSubjectKey: "subject", URLBodyKey: "body"),
 
             // airmail://compose?subject=[subject]&from=[from]&to=[to]&cc=[cc]&bcc=[bcc]&plainBody=[plainBody]&htmlBody=[htmlBody]
             ThirdPartyMailClient(name: "Airmail", URLScheme: "airmail",
-                URLRoot: "//", URLCompose: "compose", URLRecipientKey: "to", URLSubjectKey: "subject", URLBodyKey: "plainBody"),
+                URLRoot: "//compose", URLRecipientKey: "to", URLSubjectKey: "subject", URLBodyKey: "plainBody"),
 
             // ms-outlook://compose?subject=[subject]&body=[body]&to=[to]
-            ThirdPartyMailClient(name: "Microsoft Outlook", URLScheme: "ms-outlook",
-                 URLRoot: "//", URLCompose: "compose", URLRecipientKey: "to", URLSubjectKey: "subject", URLBodyKey: "body"),
+            ThirdPartyMailClient(name: "Microsoft Outlook", URLScheme: "ms-outlook", URLRoot: "//compose", URLRecipientKey: "to", URLSubjectKey: "subject", URLBodyKey: "body"),
 
             // ymail://mail/compose?subject=[subject]&body=[body]&to=[to]
-            ThirdPartyMailClient(name: "Yahoo Mail", URLScheme: "ymail",
-                 URLRoot: "//", URLCompose: "mail/compose", URLRecipientKey: "to", URLSubjectKey: "subject", URLBodyKey: "body")]
+            ThirdPartyMailClient(name: "Yahoo Mail", URLScheme: "ymail", URLRoot: "//mail/compose", URLRecipientKey: "to", URLSubjectKey: "subject", URLBodyKey: "body")]
     }
 
     /**
@@ -99,12 +94,12 @@ public struct ThirdPartyMailClient {
      - Returns: A `NSURL` opening the mail client for the given parameters.
      */
     public func composeURL(_ recipient: String?, subject: String?, body: String?) -> URL {
-        var components = URLComponents(string: "\(URLScheme):\(URLRoot ?? "")\(URLCompose ?? "")")
+        var components = URLComponents(string: "\(URLScheme):\(URLRoot ?? "")")
         components?.scheme = self.URLScheme
 
         if URLRecipientKey == nil {
             if let recipient = recipient {
-                components = URLComponents(string: "\(URLScheme):\(URLRoot ?? "")\(URLCompose ?? "")\(recipient)")
+                components = URLComponents(string: "\(URLScheme):\(URLRoot ?? "")\(recipient)")
             }
         }
 
@@ -137,14 +132,11 @@ public struct ThirdPartyMailClient {
     /**
      Returns the open URL for the mail client, based on its custom URL scheme.
 
-     - Returns: A `NSURL` opening the mail client.
+     - Returns: A `URL` opening the mail client.
      */
     public func openURL() -> URL {
-        if let openURL = URL(string: "\(URLScheme):\(URLRoot ?? "")") {
-            return openURL
-        } else {
-            return URLComponents().url!
-        }
+        var components = URLComponents()
+        components.scheme = URLScheme
+        return components.url ?? URLComponents().url!
     }
 }
-
