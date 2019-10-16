@@ -71,7 +71,6 @@ open class ThirdPartyMailer {
     open class func application(_ application: UIApplicationOpenURLProtocol, openMailClient client: ThirdPartyMailClient, recipient: String?, subject: String?, body: String?) -> Bool {
         return application.openURL(client.composeURL(recipient, subject: subject, body: body))
     }
-    
 }
 
 /**

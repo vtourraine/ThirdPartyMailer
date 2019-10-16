@@ -137,6 +137,6 @@ public struct ThirdPartyMailClient {
     public func openURL() -> URL {
         var components = URLComponents()
         components.scheme = URLScheme
-        return components.url ?? URLComponents().url!
+        return components.url!
     }
 }
