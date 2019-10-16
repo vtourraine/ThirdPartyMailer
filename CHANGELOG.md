@@ -1,5 +1,10 @@
 # ThirdPartyMailer changelog
 
+## 1.6 (work in progress)
+
+- Add open client method
+
+
 ## 1.5
 
 - Add Swift Package Manager support
