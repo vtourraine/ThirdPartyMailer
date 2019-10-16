@@ -39,14 +39,12 @@ public struct ThirdPartyMailClient {
     let URLRecipientKey: String?
 
     /**
-     The URL query items key for the subject, or `nil` if this client doesn’t
-     support setting the subject.
+     The URL query items key for the subject, or `nil` if this client doesn’t support setting the subject.
      */
     let URLSubjectKey: String?
 
     /**
-     The URL query items key for the message body, or `nil` if this client
-     doesn’t support setting the message body.
+     The URL query items key for the message body, or `nil` if this client doesn’t support setting the message body.
      */
     let URLBodyKey: String?
 
@@ -91,7 +89,7 @@ public struct ThirdPartyMailClient {
      - Parameters subject: The subject for the email message (optional).
      - Parameters body: The body for the email message (optional).
 
-     - Returns: A `NSURL` opening the mail client for the given parameters.
+     - Returns: A `URL` opening the mail client for the given parameters.
      */
     public func composeURL(_ recipient: String?, subject: String?, body: String?) -> URL {
         var components = URLComponents(string: "\(URLScheme):\(URLRoot ?? "")")
