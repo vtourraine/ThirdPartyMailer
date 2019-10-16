@@ -128,5 +128,15 @@ public struct ThirdPartyMailClient {
             return URLComponents().url!
         }
     }
-}
+    
+    /**
+     Returns the open URL for the mail client, based on its custom URL scheme.
 
+     - Returns: A `URL` opening the mail client.
+     */
+    public func openURL() -> URL {
+        var components = URLComponents()
+        components.scheme = URLScheme
+        return components.url!
+    }
+}

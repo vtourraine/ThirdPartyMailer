@@ -37,6 +37,9 @@ class ThirdPartyMailClientsTests: XCTestCase {
         let sparrow = clientWithURLScheme("sparrow")
         XCTAssertNotNil(sparrow)
 
+        _ = ThirdPartyMailer.application(application, openMailClient: sparrow!)
+        XCTAssertEqual(application.lastOpenedURL?.absoluteString, "sparrow:")
+
         _ = ThirdPartyMailer.application(application, openMailClient: sparrow!, recipient: nil, subject: nil, body: nil)
         XCTAssertEqual(application.lastOpenedURL?.absoluteString, "sparrow:")
 
@@ -50,6 +53,9 @@ class ThirdPartyMailClientsTests: XCTestCase {
     func testGmail() {
         let gmail = clientWithURLScheme("googlegmail")
         XCTAssertNotNil(gmail)
+
+        _ = ThirdPartyMailer.application(application, openMailClient: gmail!)
+        XCTAssertEqual(application.lastOpenedURL?.absoluteString, "googlegmail:")
 
         _ = ThirdPartyMailer.application(application, openMailClient: gmail!, recipient: nil, subject: nil, body: nil)
         XCTAssertEqual(application.lastOpenedURL?.absoluteString, "googlegmail:///co")
@@ -65,6 +71,9 @@ class ThirdPartyMailClientsTests: XCTestCase {
         let dispatch = clientWithURLScheme("x-dispatch")
         XCTAssertNotNil(dispatch)
 
+        _ = ThirdPartyMailer.application(application, openMailClient: dispatch!)
+        XCTAssertEqual(application.lastOpenedURL?.absoluteString, "x-dispatch:")
+
         _ = ThirdPartyMailer.application(application, openMailClient: dispatch!, recipient: nil, subject: nil, body: nil)
         XCTAssertEqual(application.lastOpenedURL?.absoluteString, "x-dispatch:///compose")
 
@@ -78,6 +87,9 @@ class ThirdPartyMailClientsTests: XCTestCase {
     func testSpark() {
         let spark = clientWithURLScheme("readdle-spark")
         XCTAssertNotNil(spark)
+
+        _ = ThirdPartyMailer.application(application, openMailClient: spark!)
+        XCTAssertEqual(application.lastOpenedURL?.absoluteString, "readdle-spark:")
 
         _ = ThirdPartyMailer.application(application, openMailClient: spark!, recipient: nil, subject: nil, body: nil)
         XCTAssertEqual(application.lastOpenedURL?.absoluteString, "readdle-spark://compose")
@@ -93,6 +105,9 @@ class ThirdPartyMailClientsTests: XCTestCase {
         let airmail = clientWithURLScheme("airmail")
         XCTAssertNotNil(airmail)
 
+        _ = ThirdPartyMailer.application(application, openMailClient: airmail!)
+        XCTAssertEqual(application.lastOpenedURL?.absoluteString, "airmail:")
+
         _ = ThirdPartyMailer.application(application, openMailClient: airmail!, recipient: nil, subject: nil, body: nil)
         XCTAssertEqual(application.lastOpenedURL?.absoluteString, "airmail://compose")
 
@@ -107,6 +122,9 @@ class ThirdPartyMailClientsTests: XCTestCase {
         let outlook = clientWithURLScheme("ms-outlook")
         XCTAssertNotNil(outlook)
 
+        _ = ThirdPartyMailer.application(application, openMailClient: outlook!)
+        XCTAssertEqual(application.lastOpenedURL?.absoluteString, "ms-outlook:")
+
         _ = ThirdPartyMailer.application(application, openMailClient: outlook!, recipient: nil, subject: nil, body: nil)
         XCTAssertEqual(application.lastOpenedURL?.absoluteString, "ms-outlook://compose")
 
@@ -120,6 +138,9 @@ class ThirdPartyMailClientsTests: XCTestCase {
     func testYahooMail() {
         let yahoo = clientWithURLScheme("ymail")
         XCTAssertNotNil(yahoo)
+
+        _ = ThirdPartyMailer.application(application, openMailClient: yahoo!)
+        XCTAssertEqual(application.lastOpenedURL?.absoluteString, "ymail:")
 
         _ = ThirdPartyMailer.application(application, openMailClient: yahoo!, recipient: nil, subject: nil, body: nil)
         XCTAssertEqual(application.lastOpenedURL?.absoluteString, "ymail://mail/compose")

@@ -44,6 +44,19 @@ open class ThirdPartyMailer {
         return application.canOpenURL(URL)
     }
 
+    
+    /**
+     Opens a third-party mail client.
+
+     - Parameters application: The main application (usually `UIApplication.sharedApplication()`).
+     - Parameters client: The third-party client to test.
+
+     - Returns: `true` if the application opens the client; otherwise, `false`.
+     */
+    open class func application(_ application: UIApplicationOpenURLProtocol, openMailClient client: ThirdPartyMailClient) -> Bool {
+        return application.openURL(client.openURL())
+    }
+    
     /**
      Opens a third-party mail client in compose mode.
 
