@@ -79,7 +79,7 @@ ThirdPartyMailer is written in Swift 5.0, requires iOS 8.0 and above, Xcode 1
 
 ## Credits
 
-ThirdPartyMailer was created by [Vincent Tourraine](http://www.vtourraine.net).
+ThirdPartyMailer was created by [Vincent Tourraine](https://www.vtourraine.net).
 
 
 ## License

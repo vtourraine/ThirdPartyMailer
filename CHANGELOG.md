@@ -1,6 +1,6 @@
 # ThirdPartyMailer changelog
 
-## 1.6 (work in progress)
+## 1.6
 
 - Add open client method
 
