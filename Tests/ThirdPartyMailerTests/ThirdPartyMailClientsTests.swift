@@ -151,6 +151,24 @@ class ThirdPartyMailClientsTests: XCTestCase {
         _ = ThirdPartyMailer.application(application, openMailClient: yahoo!, recipient: "test@mail.com", subject: "Sub", body: "ABC def")
         XCTAssertEqual(application.lastOpenedURL?.absoluteString, "ymail://mail/compose?to=test@mail.com&subject=Sub&body=ABC%20def")
     }
+
+    func testFastmail() {
+        let fastmail = clientWithURLScheme("fastmail")
+        XCTAssertNotNil(fastmail)
+
+        _ = ThirdPartyMailer.application(application, openMailClient: fastmail!)
+        XCTAssertEqual(application.lastOpenedURL?.absoluteString, "fastmail:")
+
+        _ = ThirdPartyMailer.application(application, openMailClient: fastmail!, recipient: nil, subject: nil, body: nil)
+        XCTAssertEqual(application.lastOpenedURL?.absoluteString, "fastmail://mail/compose")
+
+        _ = ThirdPartyMailer.application(application, openMailClient: fastmail!, recipient: "test@mail.com", subject: nil, body: nil)
+        XCTAssertEqual(application.lastOpenedURL?.absoluteString, "fastmail://mail/compose?to=test@mail.com")
+
+        _ = ThirdPartyMailer.application(application, openMailClient: fastmail!, recipient: "test@mail.com", subject: "Sub", body: "ABC def")
+        XCTAssertEqual(application.lastOpenedURL?.absoluteString, "fastmail://mail/compose?to=test@mail.com&subject=Sub&body=ABC%20def")
+    }
+
 }
 
 class ApplicationMock: UIApplicationOpenURLProtocol {
