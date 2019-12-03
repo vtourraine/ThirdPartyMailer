@@ -1,5 +1,10 @@
 # ThirdPartyMailer changelog
 
+## 1.7
+
+- Add Fastmail support
+
+
 ## 1.6
 
 - Add open client method
