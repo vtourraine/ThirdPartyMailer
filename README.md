@@ -21,6 +21,7 @@ Spark              | `readdle-spark` | [link](https://itunes.apple.com/app/id997
 Airmail            | `airmail`       | [link](https://itunes.apple.com/app/id993160329?mt=8)
 Microsoft Outlook  | `ms-outlook`    | [link](https://itunes.apple.com/app/id951937596?mt=8)
 Yahoo Mail         | `ymail`         | [link](https://itunes.apple.com/app/id577586159?mt=8)
+Fastmail           | `Fastmail`      | [link](https://apps.apple.com/app/id931370077?mt=8)
 
 Unfortunately, not all mail clients offer URL schemes to be supported by `ThirdPartyMailer`. If you’re aware of another candidate, please [let us know](https://github.com/vtourraine/ThirdPartyMailer/issues).
 

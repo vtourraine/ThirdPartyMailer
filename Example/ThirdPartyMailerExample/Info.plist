@@ -27,6 +27,7 @@
 		<string>x-dispatch</string>
 		<string>readdle-spark</string>
 		<string>airmail</string>
+		<string>fastmail</string>
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>

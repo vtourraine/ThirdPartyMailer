@@ -56,30 +56,29 @@ public struct ThirdPartyMailClient {
     public static func clients() -> [ThirdPartyMailClient] {
         return [
             // sparrow:[to]?subject=[subject]&body=[body]
-            ThirdPartyMailClient(name: "Sparrow", URLScheme: "sparrow",
-                URLRoot: nil, URLRecipientKey: nil, URLSubjectKey: "subject", URLBodyKey: "body"),
+            ThirdPartyMailClient(name: "Sparrow", URLScheme: "sparrow", URLRoot: nil, URLRecipientKey: nil, URLSubjectKey: "subject", URLBodyKey: "body"),
 
             // googlegmail:///co?to=[to]&subject=[subject]&body=[body]
-            ThirdPartyMailClient(name: "Gmail", URLScheme: "googlegmail",
-                URLRoot: "///co", URLRecipientKey: "to", URLSubjectKey: "subject", URLBodyKey: "body"),
+            ThirdPartyMailClient(name: "Gmail", URLScheme: "googlegmail", URLRoot: "///co", URLRecipientKey: "to", URLSubjectKey: "subject", URLBodyKey: "body"),
 
             // x-dispatch:///compose?to=[to]&subject=[subject]&body=[body]
-            ThirdPartyMailClient(name: "Dispatch", URLScheme: "x-dispatch",
-                URLRoot: "///compose", URLRecipientKey: "to", URLSubjectKey: "subject", URLBodyKey: "body"),
+            ThirdPartyMailClient(name: "Dispatch", URLScheme: "x-dispatch", URLRoot: "///compose", URLRecipientKey: "to", URLSubjectKey: "subject", URLBodyKey: "body"),
 
             // readdle-spark://compose?subject=[subject]&body=[body]&recipient=[recipient]
-            ThirdPartyMailClient(name: "Spark", URLScheme: "readdle-spark",
-                URLRoot: "//compose", URLRecipientKey: "recipient", URLSubjectKey: "subject", URLBodyKey: "body"),
+            ThirdPartyMailClient(name: "Spark", URLScheme: "readdle-spark", URLRoot: "//compose", URLRecipientKey: "recipient", URLSubjectKey: "subject", URLBodyKey: "body"),
 
             // airmail://compose?subject=[subject]&from=[from]&to=[to]&cc=[cc]&bcc=[bcc]&plainBody=[plainBody]&htmlBody=[htmlBody]
-            ThirdPartyMailClient(name: "Airmail", URLScheme: "airmail",
-                URLRoot: "//compose", URLRecipientKey: "to", URLSubjectKey: "subject", URLBodyKey: "plainBody"),
+            ThirdPartyMailClient(name: "Airmail", URLScheme: "airmail", URLRoot: "//compose", URLRecipientKey: "to", URLSubjectKey: "subject", URLBodyKey: "plainBody"),
 
             // ms-outlook://compose?subject=[subject]&body=[body]&to=[to]
             ThirdPartyMailClient(name: "Microsoft Outlook", URLScheme: "ms-outlook", URLRoot: "//compose", URLRecipientKey: "to", URLSubjectKey: "subject", URLBodyKey: "body"),
 
             // ymail://mail/compose?subject=[subject]&body=[body]&to=[to]
-            ThirdPartyMailClient(name: "Yahoo Mail", URLScheme: "ymail", URLRoot: "//mail/compose", URLRecipientKey: "to", URLSubjectKey: "subject", URLBodyKey: "body")]
+            ThirdPartyMailClient(name: "Yahoo Mail", URLScheme: "ymail", URLRoot: "//mail/compose", URLRecipientKey: "to", URLSubjectKey: "subject", URLBodyKey: "body"),
+
+            // fastmail://mail/compose?subject=[subject]&body=[body]&to=[to]
+            ThirdPartyMailClient(name: "Fastmail", URLScheme: "fastmail", URLRoot: "//mail/compose", URLRecipientKey: "to", URLSubjectKey: "subject", URLBodyKey: "body")
+            ]
     }
 
     /**
