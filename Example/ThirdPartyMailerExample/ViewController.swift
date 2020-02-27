@@ -32,7 +32,7 @@ class ViewController: UITableViewController {
             cell.detailTextLabel?.textColor = view.tintColor
         }
         else {
-            cell.detailTextLabel?.text = NSLocalizedString("Unvailable", comment: "")
+            cell.detailTextLabel?.text = NSLocalizedString("Unavailable", comment: "")
             cell.detailTextLabel?.textColor = UIColor.red
         }
 
