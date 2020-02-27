@@ -1,0 +1,11 @@
+framework module ThirdPartyMailer {
+  umbrella header "ThirdPartyMailer.h"
+
+  export *
+  module * { export * }
+}
+
+module ThirdPartyMailer.Swift {
+    header "ThirdPartyMailer-Swift.h"
+    requires objc
+}
