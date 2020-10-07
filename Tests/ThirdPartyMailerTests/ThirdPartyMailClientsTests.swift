@@ -3,7 +3,7 @@
 //  ThirdPartyMailerExampleTests
 //
 //  Created by Vincent Tourraine on 28/03/16.
-//  Copyright © 2016-2019 Vincent Tourraine. All rights reserved.
+//  Copyright © 2016-2020 Vincent Tourraine. All rights reserved.
 //
 
 import XCTest
