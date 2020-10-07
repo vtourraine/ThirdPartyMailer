@@ -1,5 +1,10 @@
 # ThirdPartyMailer changelog
 
+## 1.7.1
+
+- Update deployment target to iOS 9
+
+
 ## 1.7
 
 - Add Fastmail support
