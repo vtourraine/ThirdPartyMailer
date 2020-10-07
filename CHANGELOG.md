@@ -1,5 +1,10 @@
 # ThirdPartyMailer changelog
 
+## 1.8 (work in progress)
+
+- Carthage support
+
+
 ## 1.7.1
 
 - Update deployment target to iOS 9
