@@ -21,7 +21,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-import Foundation
+import UIKit
 
 /// A third-party mail client, offering a custom URL scheme.
 public struct ThirdPartyMailClient {
@@ -79,6 +79,15 @@ public struct ThirdPartyMailClient {
             // fastmail://mail/compose?subject=[subject]&body=[body]&to=[to]
             ThirdPartyMailClient(name: "Fastmail", URLScheme: "fastmail", URLRoot: "//mail/compose", URLRecipientKey: "to", URLSubjectKey: "subject", URLBodyKey: "body")
             ]
+    }
+    
+    /**
+     Returns an array of installed mail clients.
+
+     - Returns: An array of `ThirdPartyMailClient`.
+     */
+    public static func installedClients() -> [ThirdPartyMailClient] {
+        return clients().filter({ UIApplication.shared.canOpenURL($0.openURL()) == true })
     }
 
     /**
