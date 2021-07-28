@@ -1,6 +1,6 @@
 # ThirdPartyMailer changelog
 
-## 1.8 (work in progress)
+## 1.8
 
 - Carthage support
 
