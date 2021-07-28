@@ -1,7 +1,7 @@
 //
 // ThirdPartyMailer.swift
 //
-// Copyright (c) 2016-2020 Vincent Tourraine (http://www.vtourraine.net)
+// Copyright (c) 2016-2021 Vincent Tourraine (http://www.vtourraine.net)
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -50,11 +50,11 @@ open class ThirdPartyMailer {
 
      - Parameters application: The main application (usually `UIApplication.sharedApplication()`).
      - Parameters client: The third-party client to test.
-
-     - Returns: `true` if the application opens the client; otherwise, `false`.
+     - Parameters completionHandler: The block to execute with the results.     
      */
-    open class func application(_ application: UIApplicationOpenURLProtocol, openMailClient client: ThirdPartyMailClient) -> Bool {
-        return application.openURL(client.openURL())
+    open class func application(_ application: UIApplicationOpenURLProtocol, openMailClient client: ThirdPartyMailClient, completionHandler completion: ((Bool) -> Void)? = nil) {
+        let url = client.openURL()
+        application.open(url, options: [:], completionHandler: completion)
     }
     
     /**
@@ -65,11 +65,11 @@ open class ThirdPartyMailer {
      - Parameters recipient: The email address of the recipient (optional).
      - Parameters subject: The email subject (optional).
      - Parameters body: The email body (optional).
-
-     - Returns: `true` if the application opens the client; otherwise, `false`.
+     - Parameters completionHandler: The block to execute with the results.
      */
-    open class func application(_ application: UIApplicationOpenURLProtocol, openMailClient client: ThirdPartyMailClient, recipient: String?, subject: String?, body: String?) -> Bool {
-        return application.openURL(client.composeURL(recipient, subject: subject, body: body))
+    open class func application(_ application: UIApplicationOpenURLProtocol, openMailClient client: ThirdPartyMailClient, recipient: String?, subject: String?, body: String?, completionHandler completion: ((Bool) -> Void)? = nil) {
+        let url = client.composeURL(recipient, subject: subject, body: body)
+        application.open(url, options: [:], completionHandler: completion)
     }
 }
 
@@ -90,10 +90,10 @@ public protocol UIApplicationOpenURLProtocol {
      Attempts to open the resource at the specified URL.
 
      - Parameters url: The URL to open.
-
-     - Returns: `YES` if the resource located by the URL was successfully opened; otherwise `NO`.
+     - Parameters options: A dictionary of options to use when opening the URL
+     - Parameters completionHandler: The block to execute with the results.
      */
-    func openURL(_ url: URL) -> Bool
+    func open(_ url: URL, options: [UIApplication.OpenExternalURLOptionsKey : Any], completionHandler completion: ((Bool) -> Void)?)
 }
 
 /// Extend `UIApplication` to conform to the `UIApplicationOpenURLProtocol`.

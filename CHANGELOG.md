@@ -1,5 +1,12 @@
 # ThirdPartyMailer changelog
 
+
+## 2.0 (work in progress)
+
+- New Open URL interface
+- Requires iOS 10
+
+
 ## 1.8
 
 - Carthage support
