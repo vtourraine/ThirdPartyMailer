@@ -58,19 +58,17 @@ let clients = ThirdPartyMailClient.clients()
 ⚠️ In order to test the client availability, your app needs to declare the relevant URL scheme in its `Info.plist` file, by adding a `LSApplicationQueriesSchemes` array. You can find [an example here](https://github.com/vtourraine/ThirdPartyMailer/blob/69ef4095336ccebc76ac528234c1739f66d258d1/Tests/ThirdPartyMailerExample/Info.plist#L23), or check out the [documentation](https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/LaunchServicesKeys.html#//apple_ref/doc/uid/TP40009250-SW14).
 
 ``` swift
-let application = UIApplication.shared
-
-if ThirdPartyMailer.application(application, isMailClientAvailable: client) {
+if ThirdPartyMailer.application(isMailClientAvailable: client) {
     // ...
 }
 ```
 
-### Opening the client (with optional message recipient, subject, and body)
+### Opening the client (with optional message recipient, subject, body, cc, and bcc)
 
 ``` swift
-let application = UIApplication.shared
+ThirdPartyMailer.application(openMailClient: client, recipient: "friend@mail.com")
 
-ThirdPartyMailer.application(application, openMailClient: client, recipient: nil, subject: nil, body: nil)
+ThirdPartyMailer.application(openMailClient: client, recipient: "friend@mail.com", subject: "Hello", body: "Good morning...", cc: "cc@mail.com", bcc: "bcc@mail.com")
 ```
 
 
