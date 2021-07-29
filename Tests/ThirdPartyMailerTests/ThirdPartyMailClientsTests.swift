@@ -55,10 +55,10 @@ class ThirdPartyMailClientsTests: XCTestCase {
         ThirdPartyMailer.application(application, openMailClient: sparrow!)
         XCTAssertEqual(application.lastOpenedURL?.absoluteString, "sparrow:")
 
-        ThirdPartyMailer.application(application, openMailClient: sparrow!, recipient: nil, subject: nil, body: nil)
+        ThirdPartyMailer.application(application, openMailClient: sparrow!, recipient: nil)
         XCTAssertEqual(application.lastOpenedURL?.absoluteString, "sparrow:")
 
-        ThirdPartyMailer.application(application, openMailClient: sparrow!, recipient: "test@mail.com", subject: nil, body: nil)
+        ThirdPartyMailer.application(application, openMailClient: sparrow!, recipient: "test@mail.com")
         XCTAssertEqual(application.lastOpenedURL?.absoluteString, "sparrow:test@mail.com")
 
         ThirdPartyMailer.application(application, openMailClient: sparrow!, recipient: "test@mail.com", subject: "Sub", body: "ABC def")
@@ -72,14 +72,17 @@ class ThirdPartyMailClientsTests: XCTestCase {
         ThirdPartyMailer.application(application, openMailClient: gmail!)
         XCTAssertEqual(application.lastOpenedURL?.absoluteString, "googlegmail:")
 
-        ThirdPartyMailer.application(application, openMailClient: gmail!, recipient: nil, subject: nil, body: nil)
+        ThirdPartyMailer.application(application, openMailClient: gmail!, recipient: nil)
         XCTAssertEqual(application.lastOpenedURL?.absoluteString, "googlegmail:///co")
 
-        ThirdPartyMailer.application(application, openMailClient: gmail!, recipient: "test@mail.com", subject: nil, body: nil)
+        ThirdPartyMailer.application(application, openMailClient: gmail!, recipient: "test@mail.com")
         XCTAssertEqual(application.lastOpenedURL?.absoluteString, "googlegmail:///co?to=test@mail.com")
 
         ThirdPartyMailer.application(application, openMailClient: gmail!, recipient: "test@mail.com", subject: "Sub", body: "ABC def")
         XCTAssertEqual(application.lastOpenedURL?.absoluteString, "googlegmail:///co?to=test@mail.com&subject=Sub&body=ABC%20def")
+
+        ThirdPartyMailer.application(application, openMailClient: gmail!, recipient: "test@mail.com", cc: "testcopy@mail.com", bcc: "blindtestcopy@mail.com")
+        XCTAssertEqual(application.lastOpenedURL?.absoluteString, "googlegmail:///co?to=test@mail.com&cc=testcopy@mail.com&bcc=blindtestcopy@mail.com")
     }
 
     func testDispatch() {
@@ -89,10 +92,10 @@ class ThirdPartyMailClientsTests: XCTestCase {
         ThirdPartyMailer.application(application, openMailClient: dispatch!)
         XCTAssertEqual(application.lastOpenedURL?.absoluteString, "x-dispatch:")
 
-        ThirdPartyMailer.application(application, openMailClient: dispatch!, recipient: nil, subject: nil, body: nil)
+        ThirdPartyMailer.application(application, openMailClient: dispatch!, recipient: nil)
         XCTAssertEqual(application.lastOpenedURL?.absoluteString, "x-dispatch:///compose")
 
-        ThirdPartyMailer.application(application, openMailClient: dispatch!, recipient: "test@mail.com", subject: nil, body: nil)
+        ThirdPartyMailer.application(application, openMailClient: dispatch!, recipient: "test@mail.com")
         XCTAssertEqual(application.lastOpenedURL?.absoluteString, "x-dispatch:///compose?to=test@mail.com")
 
         ThirdPartyMailer.application(application, openMailClient: dispatch!, recipient: "test@mail.com", subject: "Sub", body: "ABC def")
@@ -106,10 +109,10 @@ class ThirdPartyMailClientsTests: XCTestCase {
         ThirdPartyMailer.application(application, openMailClient: spark!)
         XCTAssertEqual(application.lastOpenedURL?.absoluteString, "readdle-spark:")
 
-        ThirdPartyMailer.application(application, openMailClient: spark!, recipient: nil, subject: nil, body: nil)
+        ThirdPartyMailer.application(application, openMailClient: spark!, recipient: nil)
         XCTAssertEqual(application.lastOpenedURL?.absoluteString, "readdle-spark://compose")
 
-        ThirdPartyMailer.application(application, openMailClient: spark!, recipient: "test@mail.com", subject: nil, body: nil)
+        ThirdPartyMailer.application(application, openMailClient: spark!, recipient: "test@mail.com")
         XCTAssertEqual(application.lastOpenedURL?.absoluteString, "readdle-spark://compose?recipient=test@mail.com")
 
         ThirdPartyMailer.application(application, openMailClient: spark!, recipient: "test@mail.com", subject: "Sub", body: "ABC def")
@@ -123,10 +126,10 @@ class ThirdPartyMailClientsTests: XCTestCase {
         ThirdPartyMailer.application(application, openMailClient: airmail!)
         XCTAssertEqual(application.lastOpenedURL?.absoluteString, "airmail:")
 
-        ThirdPartyMailer.application(application, openMailClient: airmail!, recipient: nil, subject: nil, body: nil)
+        ThirdPartyMailer.application(application, openMailClient: airmail!, recipient: nil)
         XCTAssertEqual(application.lastOpenedURL?.absoluteString, "airmail://compose")
 
-        ThirdPartyMailer.application(application, openMailClient: airmail!, recipient: "test@mail.com", subject: nil, body: nil)
+        ThirdPartyMailer.application(application, openMailClient: airmail!, recipient: "test@mail.com")
         XCTAssertEqual(application.lastOpenedURL?.absoluteString, "airmail://compose?to=test@mail.com")
 
         ThirdPartyMailer.application(application, openMailClient: airmail!, recipient: "test@mail.com", subject: "Sub", body: "ABC def")
@@ -140,10 +143,10 @@ class ThirdPartyMailClientsTests: XCTestCase {
         ThirdPartyMailer.application(application, openMailClient: outlook!)
         XCTAssertEqual(application.lastOpenedURL?.absoluteString, "ms-outlook:")
 
-        ThirdPartyMailer.application(application, openMailClient: outlook!, recipient: nil, subject: nil, body: nil)
+        ThirdPartyMailer.application(application, openMailClient: outlook!, recipient: nil)
         XCTAssertEqual(application.lastOpenedURL?.absoluteString, "ms-outlook://compose")
 
-        ThirdPartyMailer.application(application, openMailClient: outlook!, recipient: "test@mail.com", subject: nil, body: nil)
+        ThirdPartyMailer.application(application, openMailClient: outlook!, recipient: "test@mail.com")
         XCTAssertEqual(application.lastOpenedURL?.absoluteString, "ms-outlook://compose?to=test@mail.com")
 
         ThirdPartyMailer.application(application, openMailClient: outlook!, recipient: "test@mail.com", subject: "Sub", body: "ABC def")
@@ -157,10 +160,10 @@ class ThirdPartyMailClientsTests: XCTestCase {
         ThirdPartyMailer.application(application, openMailClient: yahoo!)
         XCTAssertEqual(application.lastOpenedURL?.absoluteString, "ymail:")
 
-        ThirdPartyMailer.application(application, openMailClient: yahoo!, recipient: nil, subject: nil, body: nil)
+        ThirdPartyMailer.application(application, openMailClient: yahoo!, recipient: nil)
         XCTAssertEqual(application.lastOpenedURL?.absoluteString, "ymail://mail/compose")
 
-        ThirdPartyMailer.application(application, openMailClient: yahoo!, recipient: "test@mail.com", subject: nil, body: nil)
+        ThirdPartyMailer.application(application, openMailClient: yahoo!, recipient: "test@mail.com")
         XCTAssertEqual(application.lastOpenedURL?.absoluteString, "ymail://mail/compose?to=test@mail.com")
 
         ThirdPartyMailer.application(application, openMailClient: yahoo!, recipient: "test@mail.com", subject: "Sub", body: "ABC def")
@@ -174,10 +177,10 @@ class ThirdPartyMailClientsTests: XCTestCase {
         ThirdPartyMailer.application(application, openMailClient: fastmail!)
         XCTAssertEqual(application.lastOpenedURL?.absoluteString, "fastmail:")
 
-        ThirdPartyMailer.application(application, openMailClient: fastmail!, recipient: nil, subject: nil, body: nil)
+        ThirdPartyMailer.application(application, openMailClient: fastmail!, recipient: nil)
         XCTAssertEqual(application.lastOpenedURL?.absoluteString, "fastmail://mail/compose")
 
-        ThirdPartyMailer.application(application, openMailClient: fastmail!, recipient: "test@mail.com", subject: nil, body: nil)
+        ThirdPartyMailer.application(application, openMailClient: fastmail!, recipient: "test@mail.com")
         XCTAssertEqual(application.lastOpenedURL?.absoluteString, "fastmail://mail/compose?to=test@mail.com")
 
         ThirdPartyMailer.application(application, openMailClient: fastmail!, recipient: "test@mail.com", subject: "Sub", body: "ABC def")

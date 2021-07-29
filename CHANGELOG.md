@@ -4,6 +4,9 @@
 ## 2.0 (work in progress)
 
 - New Open URL interface
+- Support `cc` and `bcc` parameters
+- Update `ThirdPartyMailClient.composeURL(...)` with default parameters value
+- Update `ThirdPartyMailer.application(...)` with default parameters value
 - Requires iOS 10
 
 
