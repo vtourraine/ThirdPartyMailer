@@ -5,9 +5,11 @@
 
 - Support `cc` and `bcc` parameters
 - Replace deprecated `openURL(_)` with `open(_, options: , completionHandler:)`
+- Update `ThirdPartyMailClient.composeURL(...)` with default parameters values
 - Update `ThirdPartyMailer` functions with completion handler instead of boolean return value
-- Update `ThirdPartyMailClient.composeURL(...)` with default parameters value
-- Update `ThirdPartyMailer.application(...)` with default parameters value
+- Rename `ThirdPartyMailer` `application(_, isMailClientAvailable:)` to `isMailClientAvailable(_, with:)`, with default parameters values
+- Rename `ThirdPartyMailer` `application(_, openMailClient:, completionHandler:)` to `open(_, with:, completionHandler:)`, with default parameters value
+- Rename `ThirdPartyMailer` `application(_, openMailClient:, recipient:, subject:, body:, completionHandler:)` to `openCompose(_, recipient:, subject:, body:, cc:, bcc:, with:, completionHandler:)`, with default parameters value
 - Require iOS 10
 
 

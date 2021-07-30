@@ -24,7 +24,7 @@ class ViewController: UITableViewController {
         let client = clients[indexPath.row]
         cell.textLabel?.text = client.name
 
-        if ThirdPartyMailer.application(isMailClientAvailable: client) {
+        if ThirdPartyMailer.isMailClientAvailable(client) {
             cell.detailTextLabel?.text = NSLocalizedString("Available", comment: "")
             cell.detailTextLabel?.textColor = view.tintColor
         }
@@ -42,7 +42,7 @@ class ViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let client = clients[indexPath.row]
 
-        ThirdPartyMailer.application(openMailClient: client, recipient: nil, subject: NSLocalizedString("Test ThirdPartyMailer", comment: ""), body: nil)
+        ThirdPartyMailer.openCompose(client, subject: NSLocalizedString("Test ThirdPartyMailer", comment: ""))
 
         tableView.deselectRow(at: indexPath, animated: true)
     }

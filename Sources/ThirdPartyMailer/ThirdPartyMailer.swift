@@ -28,10 +28,10 @@ open class ThirdPartyMailer {
 
     /// Tests the availability of a third-party mail client.
     /// - Parameters:
-    ///   - application: The main application (usually `UIApplication.shared`).
     ///   - client: The third-party client to test.
+    ///   - application: The main application (optional, default value is `UIApplication.shared`).
     /// - Returns: `true` if the application can open the client; otherwise, `false`.
-    open class func application(_ application: UIApplicationOpenURLProtocol = UIApplication.shared, isMailClientAvailable client: ThirdPartyMailClient) -> Bool {
+    open class func isMailClientAvailable(_ client: ThirdPartyMailClient, with application: UIApplicationOpenURLProtocol = UIApplication.shared) -> Bool {
         var components = URLComponents()
         components.scheme = client.URLScheme
 
@@ -43,26 +43,26 @@ open class ThirdPartyMailer {
 
     /// Opens a third-party mail client.
     /// - Parameters:
-    ///   - application: The main application (usually `UIApplication.shared`).
-    ///   - client: The third-party client to test.
-    ///   - completion: The block to execute with the results.
-    open class func application(_ application: UIApplicationOpenURLProtocol = UIApplication.shared, openMailClient client: ThirdPartyMailClient, completionHandler completion: ((Bool) -> Void)? = nil) {
+    ///   - client: The third-party client to open.
+    ///   - application: The main application (optional, default value is `UIApplication.shared`).
+    ///   - completion: The block to execute with the results (optional, default value is `nil`).
+    open class func open(_ client: ThirdPartyMailClient, with application: UIApplicationOpenURLProtocol = UIApplication.shared, completionHandler completion: ((Bool) -> Void)? = nil) {
         let url = client.openURL()
         application.open(url, options: [:], completionHandler: completion)
     }
 
     /// Opens a third-party mail client in compose mode.
     /// - Parameters:
-    ///   - application: The main application (usually `UIApplication.shared`).
-    ///   - client: The third-party client to test.
-    ///   - recipient: The email address of the recipient (optional).
-    ///   - subject: The email subject (optional).
-    ///   - body: The email body (optional).
-    ///   - cc: The email address of the recipient carbon copy (optional).
-    ///   - bcc: The email address of the recipient blind carbon copy (optional).
-    ///   - completion: The block to execute with the results (optional).
-    open class func application(_ application: UIApplicationOpenURLProtocol = UIApplication.shared, openMailClient client: ThirdPartyMailClient, recipient: String?, subject: String? = nil, body: String? = nil, cc: String? = nil, bcc: String? = nil, completionHandler completion: ((Bool) -> Void)? = nil) {
-        let url = client.composeURL(recipient, subject: subject, body: body, cc: cc, bcc: bcc)
+    ///   - client: The third-party client to open.
+    ///   - recipient: The email address of the recipient (optional, default value is `nil`).
+    ///   - subject: The email subject (optional, default value is `nil`).
+    ///   - body: The email body (optional, default value is `nil`).
+    ///   - cc: The email address of the recipient carbon copy (optional, default value is `nil`).
+    ///   - bcc: The email address of the recipient blind carbon copy (optional, default value is `nil`).
+    ///   - application: The main application (optional, default value is `UIApplication.shared`).
+    ///   - completion: The block to execute with the results (optional, default value is `nil`).
+    open class func openCompose(_ client: ThirdPartyMailClient, recipient: String? = nil, subject: String? = nil, body: String? = nil, cc: String? = nil, bcc: String? = nil, with application: UIApplicationOpenURLProtocol = UIApplication.shared, completionHandler completion: ((Bool) -> Void)? = nil) {
+        let url = client.composeURL(to: recipient, subject: subject, body: body, cc: cc, bcc: bcc)
         application.open(url, options: [:], completionHandler: completion)
     }
 }
