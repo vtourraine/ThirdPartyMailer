@@ -3,11 +3,12 @@
 
 ## 2.0 (work in progress)
 
-- New Open URL interface
 - Support `cc` and `bcc` parameters
+- Replace deprecated `openURL(_)` with `open(_, options: , completionHandler:)`
+- Update `ThirdPartyMailer` functions with completion handler instead of boolean return value
 - Update `ThirdPartyMailClient.composeURL(...)` with default parameters value
 - Update `ThirdPartyMailer.application(...)` with default parameters value
-- Requires iOS 10
+- Require iOS 10
 
 
 ## 1.8
