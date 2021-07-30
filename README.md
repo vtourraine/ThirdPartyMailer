@@ -50,7 +50,7 @@ Or, you can manually import the files from the Sources folder.
 ### Getting the list of supported clients
 
 ``` swift
-let clients = ThirdPartyMailClient.clients()
+let clients = ThirdPartyMailClient.clients
 ```
 
 ### Testing the client availability (i.e. if the app is installed)

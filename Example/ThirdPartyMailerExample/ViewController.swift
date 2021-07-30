@@ -11,7 +11,7 @@ import ThirdPartyMailer
 
 class ViewController: UITableViewController {
 
-    let clients = ThirdPartyMailClient.clients()
+    let clients = ThirdPartyMailClient.clients
 
     // MARK: - Table view data source
 

@@ -27,7 +27,7 @@ import XCTest
 
 class ThirdPartyMailClientsTests: XCTestCase {
 
-    let clients = ThirdPartyMailClient.clients()
+    let clients = ThirdPartyMailClient.clients
     let application = ApplicationMock()
 
     func clientWithURLScheme(_ URLScheme: String) -> ThirdPartyMailClient? {
