@@ -8,8 +8,8 @@
 - Update `ThirdPartyMailClient.composeURL(...)` with default parameters values
 - Update `ThirdPartyMailer` functions with completion handler instead of boolean return value
 - Rename `ThirdPartyMailer` `application(_, isMailClientAvailable:)` to `isMailClientAvailable(_, with:)`, with default parameters values
-- Rename `ThirdPartyMailer` `application(_, openMailClient:, completionHandler:)` to `open(_, with:, completionHandler:)`, with default parameters value
-- Rename `ThirdPartyMailer` `application(_, openMailClient:, recipient:, subject:, body:, completionHandler:)` to `openCompose(_, recipient:, subject:, body:, cc:, bcc:, with:, completionHandler:)`, with default parameters value
+- Rename `ThirdPartyMailer` `application(_, openMailClient:, completionHandler:)` to `open(_, with:, completionHandler:)`, with default parameters values
+- Rename `ThirdPartyMailer` `application(_, openMailClient:, recipient:, subject:, body:, completionHandler:)` to `openCompose(_, recipient:, subject:, body:, cc:, bcc:, with:, completionHandler:)`, with default parameters values
 - Require iOS 10
 
 
