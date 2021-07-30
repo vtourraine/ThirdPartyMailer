@@ -58,7 +58,7 @@ let clients = ThirdPartyMailClient.clients()
 ⚠️ In order to test the client availability, your app needs to declare the relevant URL scheme in its `Info.plist` file, by adding a `LSApplicationQueriesSchemes` array. You can find [an example here](https://github.com/vtourraine/ThirdPartyMailer/blob/69ef4095336ccebc76ac528234c1739f66d258d1/Tests/ThirdPartyMailerExample/Info.plist#L23), or check out the [documentation](https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/LaunchServicesKeys.html#//apple_ref/doc/uid/TP40009250-SW14).
 
 ``` swift
-if ThirdPartyMailer.application(isMailClientAvailable: client) {
+if ThirdPartyMailer.isMailClientAvailable(client) {
     // ...
 }
 ```
@@ -66,9 +66,9 @@ if ThirdPartyMailer.application(isMailClientAvailable: client) {
 ### Opening the client (with optional message recipient, subject, body, cc, and bcc)
 
 ``` swift
-ThirdPartyMailer.application(openMailClient: client, recipient: "friend@mail.com")
+ThirdPartyMailer.openCompose(client, recipient: "friend@mail.com")
 
-ThirdPartyMailer.application(openMailClient: client, recipient: "friend@mail.com", subject: "Hello", body: "Good morning...", cc: "cc@mail.com", bcc: "bcc@mail.com")
+ThirdPartyMailer.openCompose(client, recipient: "friend@mail.com", subject: "Hello", body: "Good morning...", cc: "cc@mail.com", bcc: "bcc@mail.com")
 ```
 
 
@@ -84,4 +84,4 @@ ThirdPartyMailer was created by [Vincent Tourraine](https://www.vtourraine.net).
 
 ## License
 
-ThirdPartyMailer is available under the MIT license. See the LICENSE file for more info.
+ThirdPartyMailer is available under the MIT license. See the [LICENSE.txt](./LICENSE.txt) file for more info.
