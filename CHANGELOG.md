@@ -1,5 +1,13 @@
 # ThirdPartyMailer changelog
 
+
+## 2.0 (work in progress)
+
+- Replace deprecated `openURL(_)` with `open(_, options: , completionHandler:)`
+- Update `ThirdPartyMailer` functions with completion handler instead of boolean return value
+- Require iOS 10
+
+
 ## 1.8
 
 - Carthage support
