@@ -24,6 +24,7 @@
 import UIKit
 
 /// Tests third party mail clients availability, and opens third party mail clients in compose mode.
+@available(iOSApplicationExtension, unavailable)
 open class ThirdPartyMailer {
 
     /// Tests the availability of a third-party mail client.
