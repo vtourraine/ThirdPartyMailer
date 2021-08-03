@@ -86,4 +86,5 @@ public protocol UIApplicationOpenURLProtocol {
 }
 
 /// Extend `UIApplication` to conform to the `UIApplicationOpenURLProtocol`.
+@available(iOSApplicationExtension, unavailable)
 extension UIApplication: UIApplicationOpenURLProtocol {}
