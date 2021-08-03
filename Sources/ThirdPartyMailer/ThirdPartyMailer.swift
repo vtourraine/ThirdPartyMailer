@@ -69,6 +69,7 @@ open class ThirdPartyMailer {
 }
 
 /// Extension with URL-specific methods for `UIApplication`, or any other object responsible for handling URLs.
+@available(iOSApplicationExtension, unavailable)
 public protocol UIApplicationOpenURLProtocol {
 
     /// Returns a Boolean value indicating whether or not the URL’s scheme can be handled by some app installed on the device.
