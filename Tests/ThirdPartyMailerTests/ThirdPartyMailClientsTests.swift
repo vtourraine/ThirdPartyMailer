@@ -28,167 +28,81 @@ import XCTest
 class ThirdPartyMailClientsTests: XCTestCase {
 
     let clients = ThirdPartyMailClient.clients
-    let application = ApplicationMock()
 
     func clientWithURLScheme(_ URLScheme: String) -> ThirdPartyMailClient? {
         return clients.filter { return $0.URLScheme == URLScheme }.first
     }
 
-    func testClientAvailability() {
-        let client = ThirdPartyMailClient(name: "", URLScheme: "qwerty", URLRoot: nil, URLRecipientKey: nil, URLSubjectKey: nil, URLBodyKey: nil)
-
-        application.canOpenNextURL = true
-
-        let isAvailablePositive = ThirdPartyMailer.isMailClientAvailable(client, with: application)
-        XCTAssertTrue(isAvailablePositive)
-
-        application.canOpenNextURL = false
-
-        let isAvailableNegative = ThirdPartyMailer.isMailClientAvailable(client, with: application)
-        XCTAssertFalse(isAvailableNegative)
-    }
-
     func testSparrow() throws {
         let sparrow = try XCTUnwrap(clientWithURLScheme("sparrow"))
 
-        ThirdPartyMailer.open(sparrow, with: application)
-        XCTAssertEqual(application.lastOpenedURL?.absoluteString, "sparrow:")
-
-        ThirdPartyMailer.openCompose(sparrow, with: application)
-        XCTAssertEqual(application.lastOpenedURL?.absoluteString, "sparrow:")
-
-        ThirdPartyMailer.openCompose(sparrow, recipient: "test@mail.com", with: application)
-        XCTAssertEqual(application.lastOpenedURL?.absoluteString, "sparrow:test@mail.com")
-
-        ThirdPartyMailer.openCompose(sparrow, recipient: "test@mail.com", subject: "Sub", body: "ABC def", with: application)
-        XCTAssertEqual(application.lastOpenedURL?.absoluteString, "sparrow:test@mail.com?subject=Sub&body=ABC%20def")
+        XCTAssertEqual(sparrow.openURL().absoluteString, "sparrow:")
+        XCTAssertEqual(sparrow.composeURL().absoluteString, "sparrow:")
+        XCTAssertEqual(sparrow.composeURL(to: "test@mail.com").absoluteString, "sparrow:test@mail.com")
+        XCTAssertEqual(sparrow.composeURL(to: "test@mail.com", subject: "Sub", body: "ABC def").absoluteString, "sparrow:test@mail.com?subject=Sub&body=ABC%20def")
     }
 
     func testGmail() throws {
         let gmail = try XCTUnwrap(clientWithURLScheme("googlegmail"))
 
-        ThirdPartyMailer.open(gmail, with: application)
-        XCTAssertEqual(application.lastOpenedURL?.absoluteString, "googlegmail:")
-
-        ThirdPartyMailer.openCompose(gmail, with: application)
-        XCTAssertEqual(application.lastOpenedURL?.absoluteString, "googlegmail:///co")
-
-        ThirdPartyMailer.openCompose(gmail, recipient: "test@mail.com", with: application)
-        XCTAssertEqual(application.lastOpenedURL?.absoluteString, "googlegmail:///co?to=test@mail.com")
-
-        ThirdPartyMailer.openCompose(gmail, recipient: "test@mail.com", subject: "Sub", body: "ABC def", with: application)
-        XCTAssertEqual(application.lastOpenedURL?.absoluteString, "googlegmail:///co?to=test@mail.com&subject=Sub&body=ABC%20def")
-
-        ThirdPartyMailer.openCompose(gmail, recipient: "test@mail.com", cc: "testcopy@mail.com", bcc: "blindtestcopy@mail.com", with: application)
-        XCTAssertEqual(application.lastOpenedURL?.absoluteString, "googlegmail:///co?to=test@mail.com&cc=testcopy@mail.com&bcc=blindtestcopy@mail.com")
+        XCTAssertEqual(gmail.openURL().absoluteString, "googlegmail:")
+        XCTAssertEqual(gmail.composeURL().absoluteString, "googlegmail:///co")
+        XCTAssertEqual(gmail.composeURL(to: "test@mail.com").absoluteString, "googlegmail:///co?to=test@mail.com")
+        XCTAssertEqual(gmail.composeURL(to: "test@mail.com", subject: "Sub", body: "ABC def").absoluteString, "googlegmail:///co?to=test@mail.com&subject=Sub&body=ABC%20def")
+        XCTAssertEqual(gmail.composeURL(to: "test@mail.com", cc: "testcopy@mail.com", bcc: "blindtestcopy@mail.com").absoluteString, "googlegmail:///co?to=test@mail.com&cc=testcopy@mail.com&bcc=blindtestcopy@mail.com")
     }
 
     func testDispatch() throws {
         let dispatch = try XCTUnwrap(clientWithURLScheme("x-dispatch"))
 
-        ThirdPartyMailer.open(dispatch, with: application)
-        XCTAssertEqual(application.lastOpenedURL?.absoluteString, "x-dispatch:")
-
-        ThirdPartyMailer.openCompose(dispatch, with: application)
-        XCTAssertEqual(application.lastOpenedURL?.absoluteString, "x-dispatch:///compose")
-
-        ThirdPartyMailer.openCompose(dispatch, recipient: "test@mail.com", with: application)
-        XCTAssertEqual(application.lastOpenedURL?.absoluteString, "x-dispatch:///compose?to=test@mail.com")
-
-        ThirdPartyMailer.openCompose(dispatch, recipient: "test@mail.com", subject: "Sub", body: "ABC def", with: application)
-        XCTAssertEqual(application.lastOpenedURL?.absoluteString, "x-dispatch:///compose?to=test@mail.com&subject=Sub&body=ABC%20def")
+        XCTAssertEqual(dispatch.openURL().absoluteString, "x-dispatch:")
+        XCTAssertEqual(dispatch.composeURL().absoluteString, "x-dispatch:///compose")
+        XCTAssertEqual(dispatch.composeURL(to: "test@mail.com").absoluteString, "x-dispatch:///compose?to=test@mail.com")
+        XCTAssertEqual(dispatch.composeURL(to: "test@mail.com", subject: "Sub", body: "ABC def").absoluteString, "x-dispatch:///compose?to=test@mail.com&subject=Sub&body=ABC%20def")
     }
 
     func testSpark() throws {
         let spark = try XCTUnwrap(clientWithURLScheme("readdle-spark"))
 
-        ThirdPartyMailer.open(spark, with: application)
-        XCTAssertEqual(application.lastOpenedURL?.absoluteString, "readdle-spark:")
-
-        ThirdPartyMailer.openCompose(spark, with: application)
-        XCTAssertEqual(application.lastOpenedURL?.absoluteString, "readdle-spark://compose")
-
-        ThirdPartyMailer.openCompose(spark, recipient: "test@mail.com", with: application)
-        XCTAssertEqual(application.lastOpenedURL?.absoluteString, "readdle-spark://compose?recipient=test@mail.com")
-
-        ThirdPartyMailer.openCompose(spark, recipient: "test@mail.com", subject: "Sub", body: "ABC def", with: application)
-        XCTAssertEqual(application.lastOpenedURL?.absoluteString, "readdle-spark://compose?recipient=test@mail.com&subject=Sub&body=ABC%20def")
+        XCTAssertEqual(spark.openURL().absoluteString, "readdle-spark:")
+        XCTAssertEqual(spark.composeURL().absoluteString, "readdle-spark://compose")
+        XCTAssertEqual(spark.composeURL(to: "test@mail.com").absoluteString, "readdle-spark://compose?recipient=test@mail.com")
+        XCTAssertEqual(spark.composeURL(to: "test@mail.com", subject: "Sub", body: "ABC def").absoluteString, "readdle-spark://compose?recipient=test@mail.com&subject=Sub&body=ABC%20def")
     }
 
     func testAirmail() throws {
         let airmail = try XCTUnwrap(clientWithURLScheme("airmail"))
 
-        ThirdPartyMailer.open(airmail, with: application)
-        XCTAssertEqual(application.lastOpenedURL?.absoluteString, "airmail:")
-
-        ThirdPartyMailer.openCompose(airmail, with: application)
-        XCTAssertEqual(application.lastOpenedURL?.absoluteString, "airmail://compose")
-
-        ThirdPartyMailer.openCompose(airmail, recipient: "test@mail.com", with: application)
-        XCTAssertEqual(application.lastOpenedURL?.absoluteString, "airmail://compose?to=test@mail.com")
-
-        ThirdPartyMailer.openCompose(airmail, recipient: "test@mail.com", subject: "Sub", body: "ABC def", with: application)
-        XCTAssertEqual(application.lastOpenedURL?.absoluteString, "airmail://compose?to=test@mail.com&subject=Sub&plainBody=ABC%20def")
+        XCTAssertEqual(airmail.openURL().absoluteString, "airmail:")
+        XCTAssertEqual(airmail.composeURL().absoluteString, "airmail://compose")
+        XCTAssertEqual(airmail.composeURL(to: "test@mail.com").absoluteString, "airmail://compose?to=test@mail.com")
+        XCTAssertEqual(airmail.composeURL(to: "test@mail.com", subject: "Sub", body: "ABC def").absoluteString, "airmail://compose?to=test@mail.com&subject=Sub&plainBody=ABC%20def")
     }
 
     func testOutlook() throws {
         let outlook = try XCTUnwrap(clientWithURLScheme("ms-outlook"))
 
-        ThirdPartyMailer.open(outlook, with: application)
-        XCTAssertEqual(application.lastOpenedURL?.absoluteString, "ms-outlook:")
-
-        ThirdPartyMailer.openCompose(outlook, with: application)
-        XCTAssertEqual(application.lastOpenedURL?.absoluteString, "ms-outlook://compose")
-
-        ThirdPartyMailer.openCompose(outlook, recipient: "test@mail.com", with: application)
-        XCTAssertEqual(application.lastOpenedURL?.absoluteString, "ms-outlook://compose?to=test@mail.com")
-
-        ThirdPartyMailer.openCompose(outlook, recipient: "test@mail.com", subject: "Sub", body: "ABC def", with: application)
-        XCTAssertEqual(application.lastOpenedURL?.absoluteString, "ms-outlook://compose?to=test@mail.com&subject=Sub&body=ABC%20def")
+        XCTAssertEqual(outlook.openURL().absoluteString, "ms-outlook:")
+        XCTAssertEqual(outlook.composeURL().absoluteString, "ms-outlook://compose")
+        XCTAssertEqual(outlook.composeURL(to: "test@mail.com").absoluteString, "ms-outlook://compose?to=test@mail.com")
+        XCTAssertEqual(outlook.composeURL(to: "test@mail.com", subject: "Sub", body: "ABC def").absoluteString, "ms-outlook://compose?to=test@mail.com&subject=Sub&body=ABC%20def")
     }
 
     func testYahooMail() throws {
         let yahoo = try XCTUnwrap(clientWithURLScheme("ymail"))
 
-        ThirdPartyMailer.open(yahoo, with: application)
-        XCTAssertEqual(application.lastOpenedURL?.absoluteString, "ymail:")
-
-        ThirdPartyMailer.openCompose(yahoo, with: application)
-        XCTAssertEqual(application.lastOpenedURL?.absoluteString, "ymail://mail/compose")
-
-        ThirdPartyMailer.openCompose(yahoo, recipient: "test@mail.com", with: application)
-        XCTAssertEqual(application.lastOpenedURL?.absoluteString, "ymail://mail/compose?to=test@mail.com")
-
-        ThirdPartyMailer.openCompose(yahoo, recipient: "test@mail.com", subject: "Sub", body: "ABC def", with: application)
-        XCTAssertEqual(application.lastOpenedURL?.absoluteString, "ymail://mail/compose?to=test@mail.com&subject=Sub&body=ABC%20def")
+        XCTAssertEqual(yahoo.openURL().absoluteString, "ymail:")
+        XCTAssertEqual(yahoo.composeURL().absoluteString, "ymail://mail/compose")
+        XCTAssertEqual(yahoo.composeURL(to: "test@mail.com").absoluteString, "ymail://mail/compose?to=test@mail.com")
+        XCTAssertEqual(yahoo.composeURL(to: "test@mail.com", subject: "Sub", body: "ABC def").absoluteString, "ymail://mail/compose?to=test@mail.com&subject=Sub&body=ABC%20def")
     }
 
     func testFastmail() throws {
         let fastmail = try XCTUnwrap(clientWithURLScheme("fastmail"))
 
-        ThirdPartyMailer.open(fastmail, with: application)
-        XCTAssertEqual(application.lastOpenedURL?.absoluteString, "fastmail:")
-
-        ThirdPartyMailer.openCompose(fastmail, with: application)
-        XCTAssertEqual(application.lastOpenedURL?.absoluteString, "fastmail://mail/compose")
-
-        ThirdPartyMailer.openCompose(fastmail, recipient: "test@mail.com", with: application)
-        XCTAssertEqual(application.lastOpenedURL?.absoluteString, "fastmail://mail/compose?to=test@mail.com")
-
-        ThirdPartyMailer.openCompose(fastmail, recipient: "test@mail.com", subject: "Sub", body: "ABC def", with: application)
-        XCTAssertEqual(application.lastOpenedURL?.absoluteString, "fastmail://mail/compose?to=test@mail.com&subject=Sub&body=ABC%20def")
-    }
-}
-
-class ApplicationMock: UIApplicationOpenURLProtocol {
-    var canOpenNextURL = false
-    var lastOpenedURL: URL?
-
-    func canOpenURL(_ url: URL) -> Bool {
-        return canOpenNextURL
-    }
-
-    func open(_ url: URL, options: [UIApplication.OpenExternalURLOptionsKey : Any], completionHandler completion: ((Bool) -> Void)?) {
-        lastOpenedURL = url
+        XCTAssertEqual(fastmail.openURL().absoluteString, "fastmail:")
+        XCTAssertEqual(fastmail.composeURL().absoluteString, "fastmail://mail/compose")
+        XCTAssertEqual(fastmail.composeURL(to: "test@mail.com").absoluteString, "fastmail://mail/compose?to=test@mail.com")
+        XCTAssertEqual(fastmail.composeURL(to: "test@mail.com", subject: "Sub", body: "ABC def").absoluteString, "fastmail://mail/compose?to=test@mail.com&subject=Sub&body=ABC%20def")
     }
 }
