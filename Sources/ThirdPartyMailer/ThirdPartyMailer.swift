@@ -26,15 +26,12 @@ import UIKit
 /// Tests third party mail clients availability, and opens third party mail clients in compose mode.
 open class ThirdPartyMailer {
 
-    /**
-     Tests the availability of a third-party mail client.
-
-     - Parameters application: The main application (usually `UIApplication.sharedApplication()`).
-     - Parameters client: The third-party client to test.
-
-     - Returns: `true` if the application can open the client; otherwise, `false`.
-     */
-    open class func application(_ application: UIApplicationOpenURLProtocol, isMailClientAvailable client: ThirdPartyMailClient) -> Bool {
+    /// Tests the availability of a third-party mail client.
+    /// - Parameters:
+    ///   - client: The third-party client to test.
+    ///   - application: The main application (optional, default value is `UIApplication.shared`).
+    /// - Returns: `true` if the application can open the client; otherwise, `false`.
+    open class func isMailClientAvailable(_ client: ThirdPartyMailClient, with application: UIApplicationOpenURLProtocol = UIApplication.shared) -> Bool {
         var components = URLComponents()
         components.scheme = client.URLScheme
 
@@ -44,55 +41,45 @@ open class ThirdPartyMailer {
         return application.canOpenURL(URL)
     }
 
-    
-    /**
-     Opens a third-party mail client.
-
-     - Parameters application: The main application (usually `UIApplication.sharedApplication()`).
-     - Parameters client: The third-party client to test.
-     - Parameters completionHandler: The block to execute with the results.     
-     */
-    open class func application(_ application: UIApplicationOpenURLProtocol, openMailClient client: ThirdPartyMailClient, completionHandler completion: ((Bool) -> Void)? = nil) {
+    /// Opens a third-party mail client.
+    /// - Parameters:
+    ///   - client: The third-party client to open.
+    ///   - application: The main application (optional, default value is `UIApplication.shared`).
+    ///   - completion: The block to execute with the results (optional, default value is `nil`).
+    open class func open(_ client: ThirdPartyMailClient, with application: UIApplicationOpenURLProtocol = UIApplication.shared, completionHandler completion: ((Bool) -> Void)? = nil) {
         let url = client.openURL()
         application.open(url, options: [:], completionHandler: completion)
     }
-    
-    /**
-     Opens a third-party mail client in compose mode.
 
-     - Parameters application: The main application (usually `UIApplication.sharedApplication()`).
-     - Parameters client: The third-party client to test.
-     - Parameters recipient: The email address of the recipient (optional).
-     - Parameters subject: The email subject (optional).
-     - Parameters body: The email body (optional).
-     - Parameters completionHandler: The block to execute with the results.
-     */
-    open class func application(_ application: UIApplicationOpenURLProtocol, openMailClient client: ThirdPartyMailClient, recipient: String?, subject: String?, body: String?, completionHandler completion: ((Bool) -> Void)? = nil) {
-        let url = client.composeURL(recipient, subject: subject, body: body)
+    /// Opens a third-party mail client in compose mode.
+    /// - Parameters:
+    ///   - client: The third-party client to open.
+    ///   - recipient: The email address of the recipient (optional, default value is `nil`).
+    ///   - subject: The email subject (optional, default value is `nil`).
+    ///   - body: The email body (optional, default value is `nil`).
+    ///   - cc: The email address of the recipient carbon copy (optional, default value is `nil`).
+    ///   - bcc: The email address of the recipient blind carbon copy (optional, default value is `nil`).
+    ///   - application: The main application (optional, default value is `UIApplication.shared`).
+    ///   - completion: The block to execute with the results (optional, default value is `nil`).
+    open class func openCompose(_ client: ThirdPartyMailClient, recipient: String? = nil, subject: String? = nil, body: String? = nil, cc: String? = nil, bcc: String? = nil, with application: UIApplicationOpenURLProtocol = UIApplication.shared, completionHandler completion: ((Bool) -> Void)? = nil) {
+        let url = client.composeURL(to: recipient, subject: subject, body: body, cc: cc, bcc: bcc)
         application.open(url, options: [:], completionHandler: completion)
     }
 }
 
-/**
- Extension with URL-specific methods for `UIApplication`, or any other object responsible for handling URLs.
- */
+/// Extension with URL-specific methods for `UIApplication`, or any other object responsible for handling URLs.
 public protocol UIApplicationOpenURLProtocol {
-    /**
-     Returns a Boolean value indicating whether or not the URL’s scheme can be handled by some app installed on the device.
 
-     - Parameters url: A URL (Universal Resource Locator). At runtime, the system tests the URL’s scheme to determine if there is an installed app that is registered to handle the scheme. More than one app can be registered to handle a scheme.
-
-     - Returns: `NO` if there is no app installed on the device that is registered to handle the URL’s scheme, or if you have not declared the URL’s scheme in your `Info.plist` file; otherwise, `YES`.
-     */
+    /// Returns a Boolean value indicating whether or not the URL’s scheme can be handled by some app installed on the device.
+    /// - Parameter url: A URL (Universal Resource Locator). At runtime, the system tests the URL’s scheme to determine if there is an installed app that is registered to handle the scheme. More than one app can be registered to handle a scheme.
+    /// - Returns: `NO` if there is no app installed on the device that is registered to handle the URL’s scheme, or if you have not declared the URL’s scheme in your `Info.plist` file; otherwise, `YES`.
     func canOpenURL(_ url: URL) -> Bool
 
-    /**
-     Attempts to open the resource at the specified URL.
-
-     - Parameters url: The URL to open.
-     - Parameters options: A dictionary of options to use when opening the URL
-     - Parameters completionHandler: The block to execute with the results.
-     */
+    /// Attempts to open the resource at the specified URL.
+    /// - Parameters:
+    ///   - url: The URL to open.
+    ///   - options: A dictionary of options to use when opening the URL
+    ///   - completion: The block to execute with the results.
     func open(_ url: URL, options: [UIApplication.OpenExternalURLOptionsKey : Any], completionHandler completion: ((Bool) -> Void)?)
 }
 
