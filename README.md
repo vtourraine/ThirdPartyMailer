@@ -71,6 +71,15 @@ ThirdPartyMailer.openCompose(client, recipient: "friend@mail.com")
 ThirdPartyMailer.openCompose(client, recipient: "friend@mail.com", subject: "Hello", body: "Good morning...", cc: "cc@mail.com", bcc: "bcc@mail.com")
 ```
 
+### Using the system default mail client
+
+You can also use `.systemDefault` to get a client for the [standard `mailto:` scheme](https://en.wikipedia.org/wiki/Mailto). By default, it will open Apple Mail, but if [the user has selected a custom mail client](https://support.apple.com/en-us/HT211336) (iOS 14), it will automatically open it instead.
+
+``` swift
+let client = ThirdPartyMailClient.systemDefault
+ThirdPartyMailer.openCompose(client, recipient: "friend@mail.com")
+```
+
 
 ## Requirements
 
