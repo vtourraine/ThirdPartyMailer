@@ -112,7 +112,7 @@
 		D3AB09EC24DA0B8B0055D722 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1250;
+				LastUpgradeCheck = 1320;
 				ORGANIZATIONNAME = Globant;
 				TargetAttributes = {
 					D3AB09F424DA0B8B0055D722 = {
