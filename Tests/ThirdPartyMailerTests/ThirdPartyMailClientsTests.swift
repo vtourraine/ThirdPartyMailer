@@ -34,7 +34,7 @@ class ThirdPartyMailClientsTests: XCTestCase {
     }
 
     func testSystemDefault() throws {
-        let mail = try XCTUnwrap(clientWithURLScheme("mailto"))
+        let mail = ThirdPartyMailClient.systemDefault
 
         XCTAssertEqual(mail.openURL().absoluteString, "mailto:")
         XCTAssertEqual(mail.composeURL().absoluteString, "mailto:")

@@ -110,13 +110,17 @@ public struct ThirdPartyMailClient {
 }
 
 public extension ThirdPartyMailClient {
+    static var systemDefault: ThirdPartyMailClient {
+        get {
+            // mailto:
+            return ThirdPartyMailClient(name: "System Default", URLScheme: "mailto")
+        }
+    }
+
     /// Returns an array of predefined mail clients.
     static var clients: [ThirdPartyMailClient] {
         get {
             return [
-                // mailto:
-                ThirdPartyMailClient(name: "System Default", URLScheme: "mailto"),
-
                 // sparrow:[to]?subject=[subject]&body=[body]
                 ThirdPartyMailClient(name: "Sparrow", URLScheme: "sparrow"),
 
