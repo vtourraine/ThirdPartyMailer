@@ -1,7 +1,7 @@
 //
 // ThirdPartyMailer.swift
 //
-// Copyright (c) 2016-2020 Vincent Tourraine (http://www.vtourraine.net)
+// Copyright (c) 2016-2022 Vincent Tourraine (https://www.vtourraine.net)
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
