@@ -33,6 +33,15 @@ class ThirdPartyMailClientsTests: XCTestCase {
         return clients.filter { return $0.URLScheme == URLScheme }.first
     }
 
+    func testSystemDefault() throws {
+        let mail = try XCTUnwrap(clientWithURLScheme("mailto"))
+
+        XCTAssertEqual(mail.openURL().absoluteString, "mailto:")
+        XCTAssertEqual(mail.composeURL().absoluteString, "mailto:")
+        XCTAssertEqual(mail.composeURL(to: "test@mail.com").absoluteString, "mailto:test@mail.com")
+        XCTAssertEqual(mail.composeURL(to: "test@mail.com", subject: "Sub", body: "ABC def", cc: "test2@mail.com", bcc: "test3@mail.com").absoluteString, "mailto:test@mail.com?subject=Sub&body=ABC%20def&cc=test2@mail.com&bcc=test3@mail.com")
+    }
+
     func testSparrow() throws {
         let sparrow = try XCTUnwrap(clientWithURLScheme("sparrow"))
 

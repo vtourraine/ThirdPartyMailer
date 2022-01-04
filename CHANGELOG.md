@@ -3,6 +3,7 @@
 
 ## 2.0 (work in progress)
 
+- Support system default client (`mailto:`)
 - Support `cc` and `bcc` parameters
 - Replace deprecated `openURL(_)` with `open(_, options: , completionHandler:)`
 - Update `ThirdPartyMailClient.composeURL(...)` with default parameters values

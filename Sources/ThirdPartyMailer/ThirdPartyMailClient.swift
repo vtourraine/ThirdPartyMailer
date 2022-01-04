@@ -44,6 +44,15 @@ public struct ThirdPartyMailClient {
     /// The URL query items key for the message body, or `nil` if this client doesn’t support setting the message body.
     let URLBodyKey: String?
 
+    public init(name: String, URLScheme: String, URLRoot: String? = nil, URLRecipientKey: String? = nil, URLSubjectKey: String? = "subject", URLBodyKey: String? = "body") {
+        self.name = name
+        self.URLScheme = URLScheme
+        self.URLRoot = URLRoot
+        self.URLRecipientKey = URLRecipientKey
+        self.URLSubjectKey = URLSubjectKey
+        self.URLBodyKey = URLBodyKey
+    }
+
     /// Returns the open URL for the mail client, based on its custom URL scheme.
     /// - Returns: A `URL` opening the mail client.
     public func openURL() -> URL {
@@ -105,29 +114,32 @@ public extension ThirdPartyMailClient {
     static var clients: [ThirdPartyMailClient] {
         get {
             return [
+                // mailto:
+                ThirdPartyMailClient(name: "System Default", URLScheme: "mailto"),
+
                 // sparrow:[to]?subject=[subject]&body=[body]
-                ThirdPartyMailClient(name: "Sparrow", URLScheme: "sparrow", URLRoot: nil, URLRecipientKey: nil, URLSubjectKey: "subject", URLBodyKey: "body"),
+                ThirdPartyMailClient(name: "Sparrow", URLScheme: "sparrow"),
 
                 // googlegmail:///co?to=[to]&subject=[subject]&body=[body]
-                ThirdPartyMailClient(name: "Gmail", URLScheme: "googlegmail", URLRoot: "///co", URLRecipientKey: "to", URLSubjectKey: "subject", URLBodyKey: "body"),
+                ThirdPartyMailClient(name: "Gmail", URLScheme: "googlegmail", URLRoot: "///co", URLRecipientKey: "to"),
                 
                 // x-dispatch:///compose?to=[to]&subject=[subject]&body=[body]
-                ThirdPartyMailClient(name: "Dispatch", URLScheme: "x-dispatch", URLRoot: "///compose", URLRecipientKey: "to", URLSubjectKey: "subject", URLBodyKey: "body"),
+                ThirdPartyMailClient(name: "Dispatch", URLScheme: "x-dispatch", URLRoot: "///compose", URLRecipientKey: "to"),
 
                 // readdle-spark://compose?subject=[subject]&body=[body]&recipient=[recipient]
-                ThirdPartyMailClient(name: "Spark", URLScheme: "readdle-spark", URLRoot: "//compose", URLRecipientKey: "recipient", URLSubjectKey: "subject", URLBodyKey: "body"),
+                ThirdPartyMailClient(name: "Spark", URLScheme: "readdle-spark", URLRoot: "//compose", URLRecipientKey: "recipient"),
 
                 // airmail://compose?subject=[subject]&from=[from]&to=[to]&cc=[cc]&bcc=[bcc]&plainBody=[plainBody]&htmlBody=[htmlBody]
-                ThirdPartyMailClient(name: "Airmail", URLScheme: "airmail", URLRoot: "//compose", URLRecipientKey: "to", URLSubjectKey: "subject", URLBodyKey: "plainBody"),
+                ThirdPartyMailClient(name: "Airmail", URLScheme: "airmail", URLRoot: "//compose", URLRecipientKey: "to", URLBodyKey: "plainBody"),
 
                 // ms-outlook://compose?subject=[subject]&body=[body]&to=[to]
-                ThirdPartyMailClient(name: "Microsoft Outlook", URLScheme: "ms-outlook", URLRoot: "//compose", URLRecipientKey: "to", URLSubjectKey: "subject", URLBodyKey: "body"),
+                ThirdPartyMailClient(name: "Microsoft Outlook", URLScheme: "ms-outlook", URLRoot: "//compose", URLRecipientKey: "to"),
 
                 // ymail://mail/compose?subject=[subject]&body=[body]&to=[to]
-                ThirdPartyMailClient(name: "Yahoo Mail", URLScheme: "ymail", URLRoot: "//mail/compose", URLRecipientKey: "to", URLSubjectKey: "subject", URLBodyKey: "body"),
+                ThirdPartyMailClient(name: "Yahoo Mail", URLScheme: "ymail", URLRoot: "//mail/compose", URLRecipientKey: "to"),
 
                 // fastmail://mail/compose?subject=[subject]&body=[body]&to=[to]
-                ThirdPartyMailClient(name: "Fastmail", URLScheme: "fastmail", URLRoot: "//mail/compose", URLRecipientKey: "to", URLSubjectKey: "subject", URLBodyKey: "body")
+                ThirdPartyMailClient(name: "Fastmail", URLScheme: "fastmail", URLRoot: "//mail/compose", URLRecipientKey: "to")
             ]
         }
     }
