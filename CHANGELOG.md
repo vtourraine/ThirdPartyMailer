@@ -1,7 +1,7 @@
 # ThirdPartyMailer changelog
 
 
-## 2.0 (work in progress)
+## 2.0.0
 
 - Add `ThirdPartyMailClient.systemDefault` (`mailto:`)
 - Support `cc` and `bcc` parameters
@@ -15,7 +15,7 @@
 - Require iOS 10
 
 
-## 1.8
+## 1.8.0
 
 - Carthage support
 
