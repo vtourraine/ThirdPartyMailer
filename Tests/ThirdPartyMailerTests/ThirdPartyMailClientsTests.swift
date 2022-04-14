@@ -114,4 +114,9 @@ class ThirdPartyMailClientsTests: XCTestCase {
         XCTAssertEqual(fastmail.composeURL(to: "test@mail.com").absoluteString, "fastmail://mail/compose?to=test@mail.com")
         XCTAssertEqual(fastmail.composeURL(to: "test@mail.com", subject: "Sub", body: "ABC def").absoluteString, "fastmail://mail/compose?to=test@mail.com&subject=Sub&body=ABC%20def")
     }
+
+    func testProtonMail() throws {
+        let protonmail = try XCTUnwrap(clientWithURLScheme("protonmail"))
+        XCTAssertEqual(protonmail.composeURL(to: "foobar@foobar.org", subject: "SubjectTitleOfEMail", body: "MessageBodyFooBar").absoluteString, "protonmail://mailto:foobar@foobar.org?subject=SubjectTitleOfEMail&body=MessageBodyFooBar")
+    }
 }

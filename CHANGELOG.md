@@ -1,6 +1,11 @@
 # ThirdPartyMailer changelog
 
 
+## 2.1.0
+
+- Add ProtonMail support
+
+
 ## 2.0.0
 
 - Add `ThirdPartyMailClient.systemDefault` (`mailto:`)

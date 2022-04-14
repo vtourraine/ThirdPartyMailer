@@ -82,7 +82,14 @@ public struct ThirdPartyMailClient {
         var queryItems: [URLQueryItem] = []
 
         if let recipient = recipient, let URLRecipientKey = URLRecipientKey {
-            queryItems.append(URLQueryItem(name: URLRecipientKey, value: recipient))
+            if URLRecipientKey == ":" {
+                // Special format for ProtonMail
+                // https://github.com/vtourraine/ThirdPartyMailer/issues/32
+                components = URLComponents(string: "\(URLScheme):\(URLRoot ?? ""):\(recipient)")
+            }
+            else {
+                queryItems.append(URLQueryItem(name: URLRecipientKey, value: recipient))
+            }
         }
 
         if let subject = subject, let URLSubjectKey = URLSubjectKey {
@@ -143,7 +150,10 @@ public extension ThirdPartyMailClient {
                 ThirdPartyMailClient(name: "Yahoo Mail", URLScheme: "ymail", URLRoot: "//mail/compose", URLRecipientKey: "to"),
 
                 // fastmail://mail/compose?subject=[subject]&body=[body]&to=[to]
-                ThirdPartyMailClient(name: "Fastmail", URLScheme: "fastmail", URLRoot: "//mail/compose", URLRecipientKey: "to")
+                ThirdPartyMailClient(name: "Fastmail", URLScheme: "fastmail", URLRoot: "//mail/compose", URLRecipientKey: "to"),
+
+                // protonmail://mailto:foobar@foobar.org?subject=SubjectTitleOfEMail&body=MessageBodyFooBar
+                ThirdPartyMailClient(name: "ProtonMail", URLScheme: "protonmail", URLRoot: "//mailto", URLRecipientKey: ":")
             ]
         }
     }
