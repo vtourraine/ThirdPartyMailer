@@ -10,7 +10,19 @@
 		D3AB09FA24DA0B8B0055D722 /* ThirdPartyMailer.h in Headers */ = {isa = PBXBuildFile; fileRef = D3AB09F824DA0B8B0055D722 /* ThirdPartyMailer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D3AB0A0424DA0FBC0055D722 /* ThirdPartyMailer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AB0A0224DA0FBC0055D722 /* ThirdPartyMailer.swift */; };
 		D3AB0A0524DA0FBC0055D722 /* ThirdPartyMailClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AB0A0324DA0FBC0055D722 /* ThirdPartyMailClient.swift */; };
+		D7EB0A512837E37D0023170F /* ThirdPartyMailer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3AB09F524DA0B8B0055D722 /* ThirdPartyMailer.framework */; };
+		D7EB0A582837E3AD0023170F /* ThirdPartyMailClientsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7EB0A572837E3AD0023170F /* ThirdPartyMailClientsTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D7EB0A522837E37D0023170F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D3AB09EC24DA0B8B0055D722 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D3AB09F424DA0B8B0055D722;
+			remoteInfo = ThirdPartyMailer;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		D3AB09F524DA0B8B0055D722 /* ThirdPartyMailer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ThirdPartyMailer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -18,6 +30,8 @@
 		D3AB09F924DA0B8B0055D722 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3AB0A0224DA0FBC0055D722 /* ThirdPartyMailer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdPartyMailer.swift; sourceTree = "<group>"; };
 		D3AB0A0324DA0FBC0055D722 /* ThirdPartyMailClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdPartyMailClient.swift; sourceTree = "<group>"; };
+		D7EB0A4D2837E37D0023170F /* ThirdPartyMailerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ThirdPartyMailerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7EB0A572837E3AD0023170F /* ThirdPartyMailClientsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ThirdPartyMailClientsTests.swift; path = Tests/ThirdPartyMailerTests/ThirdPartyMailClientsTests.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -25,6 +39,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D7EB0A4A2837E37D0023170F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7EB0A512837E37D0023170F /* ThirdPartyMailer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -36,6 +58,7 @@
 			children = (
 				D3AB0A0024DA0FBC0055D722 /* Sources */,
 				D3AB09F724DA0B8B0055D722 /* ThirdPartyMailer */,
+				D7EB0A4E2837E37D0023170F /* ThirdPartyMailerTests */,
 				D3AB09F624DA0B8B0055D722 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -44,6 +67,7 @@
 			isa = PBXGroup;
 			children = (
 				D3AB09F524DA0B8B0055D722 /* ThirdPartyMailer.framework */,
+				D7EB0A4D2837E37D0023170F /* ThirdPartyMailerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -72,6 +96,14 @@
 				D3AB0A0324DA0FBC0055D722 /* ThirdPartyMailClient.swift */,
 			);
 			path = ThirdPartyMailer;
+			sourceTree = "<group>";
+		};
+		D7EB0A4E2837E37D0023170F /* ThirdPartyMailerTests */ = {
+			isa = PBXGroup;
+			children = (
+				D7EB0A572837E3AD0023170F /* ThirdPartyMailClientsTests.swift */,
+			);
+			path = ThirdPartyMailerTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -106,17 +138,40 @@
 			productReference = D3AB09F524DA0B8B0055D722 /* ThirdPartyMailer.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		D7EB0A4C2837E37D0023170F /* ThirdPartyMailerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D7EB0A542837E37D0023170F /* Build configuration list for PBXNativeTarget "ThirdPartyMailerTests" */;
+			buildPhases = (
+				D7EB0A492837E37D0023170F /* Sources */,
+				D7EB0A4A2837E37D0023170F /* Frameworks */,
+				D7EB0A4B2837E37D0023170F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D7EB0A532837E37D0023170F /* PBXTargetDependency */,
+			);
+			name = ThirdPartyMailerTests;
+			productName = ThirdPartyMailerTests;
+			productReference = D7EB0A4D2837E37D0023170F /* ThirdPartyMailerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		D3AB09EC24DA0B8B0055D722 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 1330;
 				LastUpgradeCheck = 1320;
 				ORGANIZATIONNAME = Globant;
 				TargetAttributes = {
 					D3AB09F424DA0B8B0055D722 = {
 						CreatedOnToolsVersion = 11.6;
+					};
+					D7EB0A4C2837E37D0023170F = {
+						CreatedOnToolsVersion = 13.3.1;
+						LastSwiftMigration = 1330;
 					};
 				};
 			};
@@ -134,12 +189,20 @@
 			projectRoot = "";
 			targets = (
 				D3AB09F424DA0B8B0055D722 /* ThirdPartyMailer */,
+				D7EB0A4C2837E37D0023170F /* ThirdPartyMailerTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		D3AB09F324DA0B8B0055D722 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D7EB0A4B2837E37D0023170F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -158,7 +221,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D7EB0A492837E37D0023170F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7EB0A582837E3AD0023170F /* ThirdPartyMailClientsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D7EB0A532837E37D0023170F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D3AB09F424DA0B8B0055D722 /* ThirdPartyMailer */;
+			targetProxy = D7EB0A522837E37D0023170F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		D3AB09FB24DA0B8B0055D722 /* Debug */ = {
@@ -298,7 +377,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ivan.mervich.globant.ThirdPartyMailer;
+				PRODUCT_BUNDLE_IDENTIFIER = net.vtourraine.ThirdPartyMailer;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = YES;
@@ -322,10 +401,57 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ivan.mervich.globant.ThirdPartyMailer;
+				PRODUCT_BUNDLE_IDENTIFIER = net.vtourraine.ThirdPartyMailer;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D7EB0A552837E37D0023170F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = net.vtourraine.ThirdPartyMailerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D7EB0A562837E37D0023170F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = net.vtourraine.ThirdPartyMailerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -348,6 +474,15 @@
 			buildConfigurations = (
 				D3AB09FE24DA0B8B0055D722 /* Debug */,
 				D3AB09FF24DA0B8B0055D722 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D7EB0A542837E37D0023170F /* Build configuration list for PBXNativeTarget "ThirdPartyMailerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D7EB0A552837E37D0023170F /* Debug */,
+				D7EB0A562837E37D0023170F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
