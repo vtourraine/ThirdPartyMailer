@@ -3,7 +3,7 @@
 //  ThirdPartyMailerExample
 //
 //  Created by Vincent Tourraine on 28/03/16.
-//  Copyright © 2016-2021 Vincent Tourraine. All rights reserved.
+//  Copyright © 2016-2022 Vincent Tourraine. All rights reserved.
 //
 
 import UIKit
@@ -30,7 +30,7 @@ class ViewController: UITableViewController {
         }
         else {
             cell.detailTextLabel?.text = NSLocalizedString("Unavailable", comment: "")
-            cell.detailTextLabel?.textColor = UIColor.red
+            cell.detailTextLabel?.textColor = .red
         }
 
         return cell
