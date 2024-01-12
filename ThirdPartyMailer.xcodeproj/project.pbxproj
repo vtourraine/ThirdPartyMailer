@@ -103,7 +103,8 @@
 			children = (
 				D7EB0A572837E3AD0023170F /* ThirdPartyMailClientsTests.swift */,
 			);
-			path = ThirdPartyMailerTests;
+			name = ThirdPartyMailerTests;
+			path = Tests/ThirdPartyMailerTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
