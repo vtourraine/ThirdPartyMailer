@@ -21,7 +21,7 @@ Airmail            | `airmail`       | [link](https://apps.apple.com/app/id99316
 Microsoft Outlook  | `ms-outlook`    | [link](https://apps.apple.com/app/id951937596?mt=8)
 Yahoo Mail         | `ymail`         | [link](https://apps.apple.com/app/id577586159?mt=8)
 Fastmail           | `fastmail`      | [link](https://apps.apple.com/app/id931370077?mt=8)
-ProtonMail         | `protonmail`    | [link](https://apps.apple.com/app/id979659905?mt=8)
+Proton Mail        | `protonmail`    | [link](https://apps.apple.com/app/id979659905?mt=8)
 Sparrow            | `sparrow`       | _discontinued_
 Dispatch           | `x-dispatch`    | _discontinued_
 
