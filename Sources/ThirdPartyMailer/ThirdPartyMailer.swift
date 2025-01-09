@@ -67,3 +67,21 @@ open class ThirdPartyMailer {
         application.open(url, options: [:], completionHandler: completion)
     }
 }
+
+#if swift(>=5.5.2)
+    @available(iOS 13, *)
+    @MainActor
+    extension ThirdPartyMailer {
+        open class func openCompose(_ client: ThirdPartyMailClient = .systemDefault, recipient: String? = nil, subject: String? = nil, body: String? = nil, cc: String? = nil, bcc: String? = nil, with application: UIApplication) async -> Bool {
+            return await withCheckedContinuation { continuation in
+                openCompose(client, recipient: recipient, subject: subject, body: body, cc: cc, bcc: bcc, with: application) { result in
+                    continuation.resume(returning: result)
+                }
+            }
+        }
+
+        open class func openCompose(_ client: ThirdPartyMailClient = .systemDefault, recipient: String? = nil, subject: String? = nil, body: String? = nil, cc: String? = nil, bcc: String? = nil) async -> Bool {
+            return await openCompose(client, recipient: recipient, subject: subject, body: body, cc: cc, bcc: bcc, with: .shared)
+        }
+    }
+#endif
