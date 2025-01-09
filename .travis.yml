@@ -1,6 +1,0 @@
-language: objective-c
-xcode_sdk: iphonesimulator
-osx_image: xcode10.2
-
-script:
- - xcodebuild test -project Example/ThirdPartyMailerExample.xcodeproj -scheme ThirdPartyMailerExample -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 6,OS=10.0' ONLY_ACTIVE_ARCH=NO

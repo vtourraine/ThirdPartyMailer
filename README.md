@@ -4,7 +4,7 @@ _Interact with third-party iOS mail clients, using custom URL schemes._
 
 ![Platform iOS](https://img.shields.io/badge/platform-iOS-blue.svg)
 ![Swift 5](https://img.shields.io/badge/Swift-5-blue.svg)
-[![Build Status](https://travis-ci.org/vtourraine/ThirdPartyMailer.svg?branch=master)](https://travis-ci.org/vtourraine/ThirdPartyMailer)
+[![Build](https://github.com/vtourraine/ThirdPartyMailer/actions/workflows/ios.yml/badge.svg)](https://github.com/vtourraine/ThirdPartyMailer/actions/workflows/ios.yml)
 ![Swift Package Manager](https://img.shields.io/badge/support-Swift_Package_Manager-orange.svg)
 [![CocoaPods compatible](https://img.shields.io/cocoapods/v/ThirdPartyMailer.svg)](https://cocoapods.org/pods/ThirdPartyMailer)
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg)](https://github.com/Carthage/Carthage)
@@ -15,15 +15,15 @@ _Interact with third-party iOS mail clients, using custom URL schemes._
 
 Client             | URL Scheme      | App Store
 ------------------ | --------------- | ---------
-Sparrow            | `sparrow`       | _discontinued_
 Gmail              | `googlegmail`   | [link](https://apps.apple.com/app/id422689480?mt=8)
-Dispatch           | `x-dispatch`    | [link](https://apps.apple.com/app/id642022747?mt=8)
 Spark              | `readdle-spark` | [link](https://apps.apple.com/app/id997102246?mt=8)
 Airmail            | `airmail`       | [link](https://apps.apple.com/app/id993160329?mt=8)
 Microsoft Outlook  | `ms-outlook`    | [link](https://apps.apple.com/app/id951937596?mt=8)
 Yahoo Mail         | `ymail`         | [link](https://apps.apple.com/app/id577586159?mt=8)
 Fastmail           | `fastmail`      | [link](https://apps.apple.com/app/id931370077?mt=8)
-ProtonMail         | `protonmail`    | [link](https://apps.apple.com/app/id979659905?mt=8)
+Proton Mail        | `protonmail`    | [link](https://apps.apple.com/app/id979659905?mt=8)
+Sparrow            | `sparrow`       | _discontinued_
+Dispatch           | `x-dispatch`    | _discontinued_
 
 Unfortunately, not all mail clients offer URL schemes to be supported by `ThirdPartyMailer`. If you’re aware of another candidate, please [let us know](https://github.com/vtourraine/ThirdPartyMailer/issues).
 
