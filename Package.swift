@@ -4,7 +4,7 @@ import PackageDescription
 
 let package = Package(
     name: "ThirdPartyMailer",
-    platforms: [.iOS(.v10)],
+    platforms: [.iOS(.v10), .macOS(.v10_13)],
     products: [
         .library(name: "ThirdPartyMailer", targets: ["ThirdPartyMailer"]),
     ],

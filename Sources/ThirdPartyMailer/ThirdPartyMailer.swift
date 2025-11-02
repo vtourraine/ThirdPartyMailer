@@ -21,6 +21,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
+#if canImport(UIKit)
 import UIKit
 
 /// Tests third party mail clients availability, and opens third party mail clients in compose mode.
@@ -67,3 +68,4 @@ open class ThirdPartyMailer {
         application.open(url, options: [:], completionHandler: completion)
     }
 }
+#endif

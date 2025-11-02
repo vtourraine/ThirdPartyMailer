@@ -1,5 +1,9 @@
 # ThirdPartyMailer changelog
 
+## 2.2.0 (work in progress)
+
+- Support when UIKit is not available
+
 
 ## 2.1.0
 
