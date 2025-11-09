@@ -20,6 +20,5 @@ let package = Package(
         .testTarget(
             name: "ThirdPartyMailerTests",
             dependencies: ["ThirdPartyMailer"]),
-    ],
-    swiftLanguageModes: [.v5]
+    ]
 )
